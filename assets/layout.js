@@ -532,7 +532,7 @@
             </div>
             <div class="lg:col-span-7 relative" data-reveal style="--i:2">
               <div class="relative aspect-[4/5] lg:aspect-[4/5] rounded-[28px] overflow-hidden border border-white/[0.06]">
-                <img src="${cfg.image}" alt="${cfg.imageAlt}" class="absolute inset-0 w-full h-full object-cover photo-treat" loading="eager" />
+                <img src="${R}${cfg.image}" alt="${cfg.imageAlt}" class="absolute inset-0 w-full h-full object-cover photo-treat" loading="eager" />
                 <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/10 to-transparent"></div>
                 <div class="absolute inset-0 bg-gradient-to-r from-canvas/40 via-transparent to-transparent"></div>
                 <div class="absolute left-5 bottom-5 md:left-7 md:bottom-7 cta-glass rounded-2xl p-4 md:p-5 max-w-[320px]">
@@ -668,7 +668,7 @@
       title: 'PAC air-eau',
       heroTitle: `La <span class="text-sage italic font-extralight">PAC air-eau</span>,<br/>le standard du confort.`,
       lede: 'La pompe à chaleur air-eau capte les calories de l\'air extérieur et les transmet à votre circuit de chauffage central — radiateurs ou plancher chauffant — et à votre eau chaude sanitaire. Une seule machine, deux usages.',
-      image: 'https://images.unsplash.com/photo-1717162512891-43c3a3bda7a7?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/air-eau.png',
       imageAlt: 'Unité extérieure de pompe à chaleur air-eau installée le long d\'un mur de maison contemporaine',
       specs: [{label:'COP moyen',value:'4,2'},{label:'dB(A)',value:'35'},{label:'Classe',value:'A++',accent:true}],
       principleTitle: 'Un cycle thermodynamique simple.',
@@ -702,7 +702,7 @@
       title: 'PAC air-air',
       heroTitle: `La <span class="text-sage italic font-extralight">PAC air-air</span>,<br/>chauffage &amp; climatisation.`,
       lede: 'La pompe à chaleur air-air diffuse directement de l\'air chaud ou froid dans vos pièces via des unités intérieures (splits). Réversible, elle remplace chauffage électrique et climatisation en une seule installation.',
-      image: 'https://images.unsplash.com/photo-1631545308456-bb38c1276b59?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/air-air.png',
       imageAlt: 'Split mural de pompe à chaleur réversible discrètement intégré dans un séjour',
       specs: [{label:'COP moyen',value:'3,8'},{label:'dB(A) intérieur',value:'19'},{label:'Réversible',value:'Oui',accent:true}],
       principleTitle: 'L\'air, transformé directement.',
@@ -740,7 +740,7 @@
       title: 'PAC eau-eau (géothermie)',
       heroTitle: `La <span class="text-sage italic font-extralight">PAC eau-eau</span>,<br/>le rendement maximal.`,
       lede: 'La pompe à chaleur géothermique capte les calories dans la nappe phréatique ou le sous-sol. Stabilité thermique exceptionnelle, COP supérieur à 5, durée de vie record. La solution premium pour les terrains qui s\'y prêtent.',
-      image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/eau-eau.png',
       imageAlt: 'Éoliennes au coucher du soleil, énergie renouvelable et géothermie',
       specs: [{label:'COP moyen',value:'5,2',accent:true},{label:'Stabilité',value:'10 °C'},{label:'Durée de vie',value:'+25 ans'}],
       principleTitle: 'L\'énergie stable du sous-sol.',
@@ -773,7 +773,7 @@
       title: 'Chaudière à granulés',
       heroTitle: `La <span class="text-sage italic font-extralight">chaudière à granulés</span>,<br/>biomasse haut rendement.`,
       lede: 'La chaudière à granulés de bois (pellets) brûle un combustible local et renouvelable avec un rendement supérieur à 90 %. Alimentation automatique, programmation hebdomadaire — le confort d\'une chaudière fioul, l\'empreinte d\'un mode de vie sobre.',
-      image: 'https://images.unsplash.com/photo-1659018487012-fb18ac7e2d54?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/granule.png',
       imageAlt: 'Granulés de bois (pellets) prêts à alimenter une chaudière biomasse',
       specs: [{label:'Rendement',value:'94 %',accent:true},{label:'Autonomie',value:'7-15 j'},{label:'CO₂',value:'Neutre'}],
       principleTitle: 'Le bois, version automatique.',
@@ -806,7 +806,7 @@
       title: 'Chaudière bois bûches',
       heroTitle: `La <span class="text-sage italic font-extralight">chaudière à bûches</span>,<br/>l'authenticité du bois.`,
       lede: 'La chaudière bois bûches utilise du bois fendu traditionnel. Combustible le moins cher du marché, expérience artisanale, autonomie réelle. Pensée pour les foyers avec accès à du bois local.',
-      image: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/bois.png',
       imageAlt: 'Bûches de bois soigneusement empilées pour chaudière à bûches',
       specs: [{label:'Rendement',value:'88 %'},{label:'Autonomie',value:'12-48 h'},{label:'€/kWh',value:'~0,04',accent:true}],
       principleTitle: 'Combustion à double étage.',
@@ -839,7 +839,7 @@
       title: 'Chaudière gaz à condensation',
       heroTitle: `La <span class="text-sage italic font-extralight">chaudière gaz</span>,<br/>haute performance, raccordement direct.`,
       lede: 'La chaudière gaz à condensation récupère la chaleur des fumées avant qu\'elles ne soient évacuées. Rendement supérieur à 100 % sur PCI, encombrement minimal, raccordement au réseau de ville quand il est disponible.',
-      image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/gaz.png',
       imageAlt: 'Chaudière à gaz murale moderne installée dans un local technique',
       specs: [{label:'Rendement',value:'109 %',accent:true},{label:'Encombrement',value:'Murale'},{label:'Mise en route',value:'< 2 min'}],
       principleTitle: 'Condenser pour ne rien perdre.',
@@ -878,7 +878,7 @@
       title: 'Chaudière fioul — remplacement',
       heroTitle: `Sortez du <span class="text-sage italic font-extralight">fioul</span>,<br/>nous accompagnons la transition.`,
       lede: 'L\'installation neuve de chaudière fioul est interdite depuis juillet 2022. Quali House intervient pour le remplacement (par PAC ou chaudière biomasse), avec des aides bonifiées pour la sortie du fioul.',
-      image: 'https://images.unsplash.com/photo-1532980400857-e8d9d275d858?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/fioul.png',
       imageAlt: 'Ancien local de chaufferie avec cuve fioul, candidate à un remplacement',
       specs: [{label:'Bonus sortie fioul',value:'+1 800 €',accent:true},{label:'Aides totales',value:'70 %'},{label:'Délai',value:'< 6 mois'}],
       principleTitle: 'Trois solutions de remplacement.',
@@ -903,7 +903,7 @@
       title: 'Ballon thermodynamique',
       heroTitle: `Le <span class="text-sage italic font-extralight">ballon thermodynamique</span>,<br/>3× moins de consommation.`,
       lede: 'Un ballon thermodynamique intègre une mini-pompe à chaleur qui capte les calories de l\'air ambiant pour chauffer votre eau sanitaire. Consommation divisée par trois par rapport à un cumulus électrique.',
-      image: 'https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/ballon%20thermodynamique.png',
       imageAlt: 'Ballon thermodynamique vertical installé dans un cellier moderne',
       specs: [{label:'COP',value:'3,2',accent:true},{label:'Capacité',value:'200-300 L'},{label:'Confort',value:'A+'}],
       principleTitle: 'Une PAC dédiée à votre eau chaude.',
@@ -935,7 +935,7 @@
       title: 'Chauffe-eau solaire',
       heroTitle: `Le <span class="text-sage italic font-extralight">chauffe-eau solaire</span>,<br/>l'eau chaude gratuite.`,
       lede: 'Un chauffe-eau solaire individuel (CESI) couvre 50 à 80 % de vos besoins en eau chaude grâce à 2 à 5 m² de capteurs thermiques sur toiture. Énergie totalement gratuite, à vie.',
-      image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/cesi.png',
       imageAlt: 'Capteurs solaires thermiques pour eau chaude sanitaire sur toiture résidentielle',
       specs: [{label:'Couverture',value:'70 %',accent:true},{label:'Capteurs',value:'2-5 m²'},{label:'Durée de vie',value:'+25 ans'}],
       principleTitle: 'Le soleil, capté directement.',
@@ -967,7 +967,7 @@
       title: 'Système solaire combiné',
       heroTitle: `Le <span class="text-sage italic font-extralight">SSC</span>,<br/>chauffage + ECS au soleil.`,
       lede: 'Le système solaire combiné assure à la fois le chauffage de votre maison et la production d\'eau chaude sanitaire à partir du rayonnement solaire. Jusqu\'à 60 % des besoins thermiques annuels.',
-      image: 'https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/ssc.png',
       imageAlt: 'Maison équipée d\'une grande surface de capteurs solaires combinés',
       specs: [{label:'Couverture',value:'60 %',accent:true},{label:'Capteurs',value:'10-20 m²'},{label:'Stockage',value:'+ tampon'}],
       principleTitle: 'Solaire thermique grande surface.',
@@ -999,7 +999,7 @@
       title: 'Cumulus électrique',
       heroTitle: `Le <span class="text-sage italic font-extralight">cumulus</span>,<br/>simple, fiable, économique à l'achat.`,
       lede: 'Le cumulus électrique reste la solution la plus simple et la moins chère à installer. Quali House intervient pour remplacement à l\'identique, dépannage, ou conseil sur la migration vers un ballon thermodynamique.',
-      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/electrique.png',
       imageAlt: 'Cumulus électrique installé dans un local technique impeccable',
       specs: [{label:'Capacité',value:'100-300 L'},{label:'COP',value:'1,0'},{label:'Coût installation',value:'Faible',accent:true}],
       principleTitle: 'Une résistance, un ballon, c\'est tout.',
@@ -1029,7 +1029,7 @@
       title: 'Isolation intérieure (ITI)',
       heroTitle: `L'<span class="text-sage italic font-extralight">ITI</span>,<br/>économique et accessible.`,
       lede: 'L\'isolation thermique par l\'intérieur (ITI) consiste à doubler les murs intérieurs avec un isolant. Solution la plus courante en rénovation — adaptée à toutes les configurations, sans toucher à la façade.',
-      image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/isolation%20interieur.png',
       imageAlt: 'Pose d\'isolant en laine minérale sur ossature intérieure pendant un chantier',
       specs: [{label:'R',value:'3,7 m²K/W',accent:true},{label:'Épaisseur',value:'12-16 cm'},{label:'Délai',value:'1-3 sem.'}],
       principleTitle: 'Doubler les murs, depuis l\'intérieur.',
@@ -1060,7 +1060,7 @@
       title: 'Isolation extérieure (ITE)',
       heroTitle: `L'<span class="text-sage italic font-extralight">ITE</span>,<br/>le top de la performance.`,
       lede: 'L\'isolation thermique par l\'extérieur enveloppe votre maison d\'un manteau isolant. Performance énergétique maximale, suppression de quasi tous les ponts thermiques, ravalement de façade inclus. La référence des rénovations ambitieuses.',
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/isolation%20exterieur.png',
       imageAlt: 'Échafaudage installé pour un chantier d\'isolation thermique par l\'extérieur',
       specs: [{label:'R',value:'4,4 m²K/W',accent:true},{label:'Ponts thermiques',value:'-95 %'},{label:'Durée',value:'25+ ans'}],
       principleTitle: 'Une enveloppe continue.',
@@ -1093,7 +1093,7 @@
       title: 'Rénovation globale — maison',
       heroTitle: `<span class="text-sage italic font-extralight">Rénovation globale.</span><br/>Une maison transformée.`,
       lede: 'La rénovation globale (parcours MaPrimeRénov\' accompagné) traite plusieurs lots de travaux en une opération coordonnée — isolation, chauffage, ventilation, ECS — pour un saut de 2 classes DPE minimum. Aides maximales, accompagnement obligatoire Mon Accompagnateur Rénov\'.',
-      image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/renovation-maison.png',
       imageAlt: 'Chantier de rénovation globale d\'une maison individuelle',
       specs: [{label:'Gain DPE',value:'2 classes',accent:true},{label:'Aides',value:'jusqu\'à 70 %'},{label:'Durée',value:'3-6 mois'}],
       principleTitle: 'Un projet, un chef d\'orchestre.',
@@ -1118,7 +1118,7 @@
       title: 'Rénovation globale — appartement',
       heroTitle: `<span class="text-sage italic font-extralight">Rénovation appartement.</span><br/>Dans le cadre d'une copro.`,
       lede: 'Rénover un appartement implique de composer avec la copropriété, les parties communes et les règlements d\'urbanisme. Quali House intervient sur les lots privatifs et accompagne les copropriétés sur les opérations collectives.',
-      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/renovation-appartement.png',
       imageAlt: 'Appartement contemporain entièrement rénové, finitions modernes',
       specs: [{label:'Gain DPE',value:'1-2 classes'},{label:'Délai',value:'4-10 sem.'},{label:'Copro',value:'Acceptée',accent:true}],
       principleTitle: 'Privatif & collectif coordonnés.',
@@ -1142,7 +1142,7 @@
       title: 'VMC simple flux',
       heroTitle: `La <span class="text-sage italic font-extralight">VMC simple flux</span>,<br/>l'essentiel de la ventilation.`,
       lede: 'La VMC simple flux extrait l\'air vicié des pièces humides (cuisine, salle de bain, WC) et fait entrer l\'air neuf par des entrées d\'air dans les pièces de vie. Solution efficace, économique et silencieuse.',
-      image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/un%20flux.png',
       imageAlt: 'Bouche d\'extraction de VMC simple flux discrètement intégrée au plafond',
       specs: [{label:'Hygro',value:'Auto-réglable',accent:true},{label:'dB(A)',value:'< 25'},{label:'Conso',value:'< 30 kWh/an'}],
       principleTitle: 'Extraire pour renouveler.',
@@ -1179,7 +1179,7 @@
       title: 'VMC double flux',
       heroTitle: `La <span class="text-sage italic font-extralight">VMC double flux</span>,<br/>récupération de chaleur.`,
       lede: 'La VMC double flux récupère 70 à 90 % de la chaleur de l\'air extrait pour préchauffer l\'air neuf entrant. Indispensable dans une maison bien isolée — c\'est ce qui transforme une simple isolation en vraie performance énergétique.',
-      image: 'https://images.unsplash.com/photo-1599619585752-c3edb42a414c?auto=format&fit=crop&w=1600&q=80',
+      image: 'assets/images/double%20flux.png',
       imageAlt: 'Caisson de VMC double flux avec gaines isolées installé en combles',
       specs: [{label:'Récup. chaleur',value:'88 %',accent:true},{label:'Filtration',value:'F7+'},{label:'Conso',value:'80-120 kWh/an'}],
       principleTitle: 'Échanger la chaleur, pas l\'humidité.',
@@ -1261,7 +1261,7 @@
       return `
         <a href="${sid}.html" class="group flex flex-col bg-canvas hover:bg-surface/60 transition-all" data-reveal style="--i:${i}">
           <div class="relative aspect-[4/3] overflow-hidden">
-            <img src="${s.image}" alt="${s.imageAlt}" loading="lazy"
+            <img src="${R}${s.image}" alt="${s.imageAlt}" loading="lazy"
                  class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[600ms] group-hover:scale-[1.04]" />
             <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent"></div>
             <div class="absolute top-4 left-4 font-mono text-[11px] uppercase tracking-[0.16em] text-sage/90 bg-canvas/70 backdrop-blur px-2.5 py-1 rounded-md border border-white/[0.06]">${String(i+1).padStart(2,'0')}</div>
@@ -1331,7 +1331,7 @@
       return `
         <a href="${R}prestations/${s.categorySlug}/${sid}.html" class="group flex flex-col bg-canvas hover:bg-surface/60 transition-all" data-reveal style="--i:${i}">
           <div class="relative aspect-[16/11] overflow-hidden">
-            <img src="${s.image}" alt="${s.imageAlt}" loading="lazy"
+            <img src="${R}${s.image}" alt="${s.imageAlt}" loading="lazy"
                  class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[600ms] group-hover:scale-[1.05]" />
             <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/25 to-transparent"></div>
           </div>
