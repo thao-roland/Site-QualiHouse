@@ -38,101 +38,138 @@
 </section>
 
 <section class="relative py-14 md:py-20">
-  <div class="mx-auto max-w-[1400px] px-6 md:px-10 space-y-px bg-line rounded-3xl overflow-hidden border border-line">
+  <div class="mx-auto max-w-[1400px] px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-5">
 
-    <a href="pompe-a-chaleur/index.html" class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 bg-canvas hover:bg-surface/60 transition-colors p-8 md:p-10 lg:p-12 group" data-reveal>
-      <div class="md:col-span-3">
-        <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-sage/80">i — Pompe à chaleur</span>
-        <h2 class="mt-4 text-[28px] md:text-[34px] font-light leading-[1.05] tracking-tightest group-hover:text-sage transition-colors">PAC</h2>
+    <a href="pompe-a-chaleur/index.html" class="group relative overflow-hidden rounded-3xl border border-white/[0.06] bg-surface/30 hover:border-sage/40 transition-all flex flex-col" data-reveal>
+      <div class="relative aspect-[16/10] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=80" alt="Maison contemporaine avec pompe à chaleur" loading="lazy"
+             class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[700ms] group-hover:scale-[1.05]" />
+        <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent"></div>
+        <div class="absolute top-4 left-4 font-mono text-[11px] uppercase tracking-[0.16em] text-sage/95 bg-canvas/70 backdrop-blur px-2.5 py-1 rounded-md border border-white/[0.06]">i — Pompe à chaleur</div>
       </div>
-      <div class="md:col-span-6">
-        <p class="text-[15.5px] text-muted leading-relaxed">
-          Pompes à chaleur air-eau, air-air et eau-eau (géothermique). Jusqu'à 5 kWh restitués pour 1 kWh consommé. Le standard de la rénovation énergétique haute performance.
+      <div class="p-7 md:p-9 flex flex-col flex-1">
+        <h2 class="text-[26px] md:text-[30px] font-light leading-[1.05] tracking-tightest group-hover:text-sage transition-colors">Pompe à chaleur</h2>
+        <p class="mt-4 text-[15px] text-muted leading-relaxed">
+          PAC air-eau, air-air, eau-eau (géothermique). Jusqu'à 5 kWh restitués pour 1 kWh consommé.
         </p>
-      </div>
-      <div class="md:col-span-3 flex md:justify-end md:items-end">
-        <div class="flex flex-wrap gap-2 text-[12.5px]">
+        <div class="mt-5 flex flex-wrap gap-2 text-[12.5px]">
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">air-eau</span>
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">air-air</span>
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">eau-eau</span>
         </div>
+        <div class="mt-auto pt-7">
+          <span class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sage/15 border border-sage/30 text-sage text-[13.5px] font-medium group-hover:bg-sage/25 transition-colors">
+            Découvrir les pompes à chaleur
+            <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
       </div>
     </a>
 
-    <a href="chaudiere/index.html" class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 bg-canvas hover:bg-surface/60 transition-colors p-8 md:p-10 lg:p-12 group" data-reveal style="--i:1">
-      <div class="md:col-span-3">
-        <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-sage/80">ii — Chaudière</span>
-        <h2 class="mt-4 text-[28px] md:text-[34px] font-light leading-[1.05] tracking-tightest group-hover:text-sage transition-colors">Chaudière</h2>
+    <a href="chaudiere/index.html" class="group relative overflow-hidden rounded-3xl border border-white/[0.06] bg-surface/30 hover:border-sage/40 transition-all flex flex-col" data-reveal style="--i:1">
+      <div class="relative aspect-[16/10] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80" alt="Bois et granulés stockés pour chaudière biomasse" loading="lazy"
+             class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[700ms] group-hover:scale-[1.05]" />
+        <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent"></div>
+        <div class="absolute top-4 left-4 font-mono text-[11px] uppercase tracking-[0.16em] text-sage/95 bg-canvas/70 backdrop-blur px-2.5 py-1 rounded-md border border-white/[0.06]">ii — Chaudière</div>
       </div>
-      <div class="md:col-span-6">
-        <p class="text-[15.5px] text-muted leading-relaxed">
-          Granulés, bois bûches, gaz à condensation, remplacement fioul. Installation, mise en service, raccordement aux réseaux existants par nos chauffagistes certifiés.
+      <div class="p-7 md:p-9 flex flex-col flex-1">
+        <h2 class="text-[26px] md:text-[30px] font-light leading-[1.05] tracking-tightest group-hover:text-sage transition-colors">Chaudière</h2>
+        <p class="mt-4 text-[15px] text-muted leading-relaxed">
+          Granulés, bois bûches, gaz à condensation, remplacement fioul. Installation par nos chauffagistes certifiés.
         </p>
-      </div>
-      <div class="md:col-span-3 flex md:justify-end md:items-end">
-        <div class="flex flex-wrap gap-2 text-[12.5px]">
+        <div class="mt-5 flex flex-wrap gap-2 text-[12.5px]">
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">granulés</span>
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">bois</span>
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">gaz</span>
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">fioul</span>
         </div>
+        <div class="mt-auto pt-7">
+          <span class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sage/15 border border-sage/30 text-sage text-[13.5px] font-medium group-hover:bg-sage/25 transition-colors">
+            Voir les chaudières
+            <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
       </div>
     </a>
 
-    <a href="eau-chaude/index.html" class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 bg-canvas hover:bg-surface/60 transition-colors p-8 md:p-10 lg:p-12 group" data-reveal style="--i:2">
-      <div class="md:col-span-3">
-        <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-sage/80">iii — Eau chaude sanitaire</span>
-        <h2 class="mt-4 text-[28px] md:text-[34px] font-light leading-[1.05] tracking-tightest group-hover:text-sage transition-colors">ECS</h2>
+    <a href="eau-chaude/index.html" class="group relative overflow-hidden rounded-3xl border border-white/[0.06] bg-surface/30 hover:border-sage/40 transition-all flex flex-col" data-reveal style="--i:2">
+      <div class="relative aspect-[16/10] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=80" alt="Panneaux solaires sur toiture résidentielle" loading="lazy"
+             class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[700ms] group-hover:scale-[1.05]" />
+        <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent"></div>
+        <div class="absolute top-4 left-4 font-mono text-[11px] uppercase tracking-[0.16em] text-sage/95 bg-canvas/70 backdrop-blur px-2.5 py-1 rounded-md border border-white/[0.06]">iii — Eau chaude sanitaire</div>
       </div>
-      <div class="md:col-span-6">
-        <p class="text-[15.5px] text-muted leading-relaxed">
-          Ballon thermodynamique, chauffe-eau solaire, système solaire combiné, cumulus électrique. Du remplacement express à la production renouvelable, nous installons et maintenons.
+      <div class="p-7 md:p-9 flex flex-col flex-1">
+        <h2 class="text-[26px] md:text-[30px] font-light leading-[1.05] tracking-tightest group-hover:text-sage transition-colors">Eau chaude sanitaire</h2>
+        <p class="mt-4 text-[15px] text-muted leading-relaxed">
+          Ballon thermodynamique, chauffe-eau solaire, SSC, cumulus électrique. Du remplacement express à la production renouvelable.
         </p>
-      </div>
-      <div class="md:col-span-3 flex md:justify-end md:items-end">
-        <div class="flex flex-wrap gap-2 text-[12.5px]">
+        <div class="mt-5 flex flex-wrap gap-2 text-[12.5px]">
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">thermo</span>
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">solaire</span>
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">SSC</span>
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">cumulus</span>
         </div>
+        <div class="mt-auto pt-7">
+          <span class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sage/15 border border-sage/30 text-sage text-[13.5px] font-medium group-hover:bg-sage/25 transition-colors">
+            Voir l'eau chaude
+            <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
       </div>
     </a>
 
-    <a href="isolation-renovation/index.html" class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 bg-canvas hover:bg-surface/60 transition-colors p-8 md:p-10 lg:p-12 group" data-reveal style="--i:3">
-      <div class="md:col-span-3">
-        <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-sage/80">iv — Isolation &amp; rénovation</span>
-        <h2 class="mt-4 text-[28px] md:text-[34px] font-light leading-[1.05] tracking-tightest group-hover:text-sage transition-colors">Bâti</h2>
+    <a href="isolation-renovation/index.html" class="group relative overflow-hidden rounded-3xl border border-white/[0.06] bg-surface/30 hover:border-sage/40 transition-all flex flex-col" data-reveal style="--i:3">
+      <div class="relative aspect-[16/10] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1400&q=80" alt="Maison rénovée et isolée, façade contemporaine" loading="lazy"
+             class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[700ms] group-hover:scale-[1.05]" />
+        <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent"></div>
+        <div class="absolute top-4 left-4 font-mono text-[11px] uppercase tracking-[0.16em] text-sage/95 bg-canvas/70 backdrop-blur px-2.5 py-1 rounded-md border border-white/[0.06]">iv — Isolation &amp; rénovation</div>
       </div>
-      <div class="md:col-span-6">
-        <p class="text-[15.5px] text-muted leading-relaxed">
-          Isolation par l'intérieur ou par l'extérieur, rénovation globale maison ou appartement. Mon Accompagnateur Rénov' agréé, coordination des corps d'état, audit avant/après.
+      <div class="p-7 md:p-9 flex flex-col flex-1">
+        <h2 class="text-[26px] md:text-[30px] font-light leading-[1.05] tracking-tightest group-hover:text-sage transition-colors">Isolation &amp; rénovation</h2>
+        <p class="mt-4 text-[15px] text-muted leading-relaxed">
+          ITI, ITE, rénovation globale maison ou appartement. Mon Accompagnateur Rénov' agréé, audit avant/après.
         </p>
-      </div>
-      <div class="md:col-span-3 flex md:justify-end md:items-end">
-        <div class="flex flex-wrap gap-2 text-[12.5px]">
+        <div class="mt-5 flex flex-wrap gap-2 text-[12.5px]">
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">ITI</span>
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">ITE</span>
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">réno maison</span>
           <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">réno appart</span>
         </div>
+        <div class="mt-auto pt-7">
+          <span class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sage/15 border border-sage/30 text-sage text-[13.5px] font-medium group-hover:bg-sage/25 transition-colors">
+            Voir l'isolation &amp; rénovation
+            <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
       </div>
     </a>
 
-    <a href="vmc/index.html" class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 bg-canvas hover:bg-surface/60 transition-colors p-8 md:p-10 lg:p-12 group" data-reveal style="--i:4">
-      <div class="md:col-span-3">
-        <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-sage/80">v — VMC</span>
-        <h2 class="mt-4 text-[28px] md:text-[34px] font-light leading-[1.05] tracking-tightest group-hover:text-sage transition-colors">Ventilation</h2>
-      </div>
-      <div class="md:col-span-6">
-        <p class="text-[15.5px] text-muted leading-relaxed">
-          VMC simple flux hygroréglable pour assainir l'air, double flux pour récupérer jusqu'à 90 % de la chaleur extraite. Indispensable dans toute maison rénovée et isolée.
-        </p>
-      </div>
-      <div class="md:col-span-3 flex md:justify-end md:items-end">
-        <div class="flex flex-wrap gap-2 text-[12.5px]">
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">simple flux</span>
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">double flux</span>
+    <a href="vmc/index.html" class="group md:col-span-2 relative overflow-hidden rounded-3xl border border-white/[0.06] bg-surface/30 hover:border-sage/40 transition-all" data-reveal style="--i:4">
+      <div class="grid md:grid-cols-2 h-full">
+        <div class="relative aspect-[16/10] md:aspect-auto md:min-h-[320px] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80" alt="Intérieur moderne avec ventilation discrète" loading="lazy"
+               class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[700ms] group-hover:scale-[1.05]" />
+          <div class="absolute inset-0 bg-gradient-to-tr from-canvas via-transparent to-transparent"></div>
+          <div class="absolute top-4 left-4 font-mono text-[11px] uppercase tracking-[0.16em] text-sage/95 bg-canvas/70 backdrop-blur px-2.5 py-1 rounded-md border border-white/[0.06]">v — VMC</div>
+        </div>
+        <div class="p-7 md:p-10 flex flex-col">
+          <h2 class="text-[26px] md:text-[30px] font-light leading-[1.05] tracking-tightest group-hover:text-sage transition-colors">VMC — Ventilation</h2>
+          <p class="mt-4 text-[15px] text-muted leading-relaxed">
+            Simple flux hygroréglable pour assainir l'air, double flux pour récupérer jusqu'à 90 % de la chaleur extraite.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-2 text-[12.5px]">
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">simple flux</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">double flux</span>
+          </div>
+          <div class="mt-auto pt-7">
+            <span class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sage/15 border border-sage/30 text-sage text-[13.5px] font-medium group-hover:bg-sage/25 transition-colors">
+              Voir la VMC
+              <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
         </div>
       </div>
     </a>

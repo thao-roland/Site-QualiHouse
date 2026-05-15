@@ -78,6 +78,10 @@
       :root { color-scheme: dark; }
       html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
       body { background:#0F1115; color:#F5F6F7; font-family:'Plus Jakarta Sans', system-ui, sans-serif; }
+      /* Logo sizing — applied synchronously so the SVG never flashes huge before Tailwind loads */
+      .qh-logo-nav    { width:44px; height:44px; flex-shrink:0; display:inline-block; }
+      .qh-logo-footer { width:52px; height:52px; flex-shrink:0; display:inline-block; }
+      .qh-logo-nav svg, .qh-logo-footer svg { width:100%; height:100%; display:block; }
       .grain::before {
         content:""; position:fixed; inset:0; pointer-events:none; z-index:50;
         background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
@@ -119,17 +123,18 @@
         opacity: 0; visibility: hidden;
         transition: opacity 220ms ease, transform 260ms cubic-bezier(0.16,1,0.3,1);
         width: min(980px, 92vw); z-index: 60;
+        /* Opaque dark surface — not glass — so menu reads cleanly over any background */
+        background:#16191F;
+        border:1px solid rgba(255,255,255,0.08);
+        border-radius:20px;
+        box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,0,0,0.3);
       }
       .has-mega:hover .mega, .has-mega:focus-within .mega { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
       .has-mega::after { content:""; position:absolute; left:0; right:0; top:100%; height:22px; }
       #qh-mobile-menu { transform: translateY(-12px); opacity: 0; pointer-events: none;
         transition: transform 280ms cubic-bezier(0.16,1,0.3,1), opacity 220ms ease; }
       #qh-mobile-menu.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
-      .nav-link[aria-current="page"] { color:#F5F6F7; }
-      .nav-link[aria-current="page"]::after {
-        content:""; display:block; height:2px; width:18px; background:#A8C0A6;
-        border-radius:2px; margin-top:4px;
-      }
+      .nav-link[aria-current="page"] { color:#A8C0A6; }
       ::selection { background: rgba(168,192,166,0.35); color:#fff; }
     `;
     document.head.appendChild(style);
@@ -144,7 +149,7 @@
       <nav class="cta-glass rounded-2xl px-3 md:px-5 h-16 flex items-center justify-between" aria-label="Navigation principale">
 
         <a href="${R}index.html" class="flex items-center gap-3 shrink-0" aria-label="Accueil Quali House">
-          <span class="w-11 h-11 shrink-0">${LOGO_SVG}</span>
+          <span class="qh-logo-nav">${LOGO_SVG}</span>
         </a>
 
         <ul class="hidden lg:flex items-center gap-1 text-[13.5px]">
@@ -294,7 +299,7 @@
     <div class="mx-auto max-w-[1400px] px-6 md:px-10 py-14 grid grid-cols-2 md:grid-cols-12 gap-10">
       <div class="col-span-2 md:col-span-5">
         <div class="flex items-center gap-3">
-          <span class="w-12 h-12 shrink-0">${LOGO_SVG}</span>
+          <span class="qh-logo-footer">${LOGO_SVG}</span>
         </div>
         <p class="mt-5 text-[14px] text-muted leading-relaxed max-w-md">
           Solutions énergétiques performantes, accompagnées et financées grâce aux aides de l'État.<br/>
@@ -338,9 +343,9 @@
       <div class="mx-auto max-w-[1400px] px-6 md:px-10 py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-[12px] text-muted">
         <div>© 2026 Quali House &middot; Tous droits réservés</div>
         <div class="flex items-center gap-5">
-          <a href="#" class="hover:text-ink transition-colors">Mentions légales</a>
-          <a href="#" class="hover:text-ink transition-colors">CGV</a>
-          <a href="#" class="hover:text-ink transition-colors">Confidentialité</a>
+          <a href="${R}mentions-legales.html" class="hover:text-ink transition-colors">Mentions légales</a>
+          <a href="${R}cgv.html" class="hover:text-ink transition-colors">CGV</a>
+          <a href="${R}confidentialite.html" class="hover:text-ink transition-colors">Confidentialité</a>
         </div>
       </div>
     </div>`;
@@ -629,7 +634,7 @@
       title: 'PAC air-eau',
       heroTitle: `La <span class="text-sage italic font-extralight">PAC air-eau</span>,<br/>le standard du confort.`,
       lede: 'La pompe à chaleur air-eau capte les calories de l\'air extérieur et les transmet à votre circuit de chauffage central — radiateurs ou plancher chauffant — et à votre eau chaude sanitaire. Une seule machine, deux usages.',
-      image: 'https://images.unsplash.com/photo-1623091410901-00e2d268901f?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=80',
       imageAlt: 'Unité extérieure de pompe à chaleur air-eau installée le long d\'un mur de maison contemporaine',
       specs: [{label:'COP moyen',value:'4,2'},{label:'dB(A)',value:'35'},{label:'Classe',value:'A++',accent:true}],
       principleTitle: 'Un cycle thermodynamique simple.',
@@ -663,7 +668,7 @@
       title: 'PAC air-air',
       heroTitle: `La <span class="text-sage italic font-extralight">PAC air-air</span>,<br/>chauffage &amp; climatisation.`,
       lede: 'La pompe à chaleur air-air diffuse directement de l\'air chaud ou froid dans vos pièces via des unités intérieures (splits). Réversible, elle remplace chauffage électrique et climatisation en une seule installation.',
-      image: 'https://images.unsplash.com/photo-1631545308456-bb38c1276b59?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80',
       imageAlt: 'Split mural de climatisation réversible discrètement intégré dans un séjour minimaliste',
       specs: [{label:'COP moyen',value:'3,8'},{label:'dB(A) intérieur',value:'19'},{label:'Réversible',value:'Oui',accent:true}],
       principleTitle: 'L\'air, transformé directement.',
@@ -701,7 +706,7 @@
       title: 'PAC eau-eau (géothermie)',
       heroTitle: `La <span class="text-sage italic font-extralight">PAC eau-eau</span>,<br/>le rendement maximal.`,
       lede: 'La pompe à chaleur géothermique capte les calories dans la nappe phréatique ou le sous-sol. Stabilité thermique exceptionnelle, COP supérieur à 5, durée de vie record. La solution premium pour les terrains qui s\'y prêtent.',
-      image: 'https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1600&q=80',
       imageAlt: 'Maison contemporaine en bois et verre sur terrain boisé, exemple de logement parfait pour géothermie',
       specs: [{label:'COP moyen',value:'5,2',accent:true},{label:'Stabilité',value:'10 °C'},{label:'Durée de vie',value:'+25 ans'}],
       principleTitle: 'L\'énergie stable du sous-sol.',
@@ -734,7 +739,7 @@
       title: 'Chaudière à granulés',
       heroTitle: `La <span class="text-sage italic font-extralight">chaudière à granulés</span>,<br/>biomasse haut rendement.`,
       lede: 'La chaudière à granulés de bois (pellets) brûle un combustible local et renouvelable avec un rendement supérieur à 90 %. Alimentation automatique, programmation hebdomadaire — le confort d\'une chaudière fioul, l\'empreinte d\'un mode de vie sobre.',
-      image: 'https://images.unsplash.com/photo-1605276373954-0c4a0dac5b12?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80',
       imageAlt: 'Sacs de granulés de bois en stock, prêts pour alimenter une chaudière biomasse moderne',
       specs: [{label:'Rendement',value:'94 %',accent:true},{label:'Autonomie',value:'7-15 j'},{label:'CO₂',value:'Neutre'}],
       principleTitle: 'Le bois, version automatique.',
@@ -767,7 +772,7 @@
       title: 'Chaudière bois bûches',
       heroTitle: `La <span class="text-sage italic font-extralight">chaudière à bûches</span>,<br/>l'authenticité du bois.`,
       lede: 'La chaudière bois bûches utilise du bois fendu traditionnel. Combustible le moins cher du marché, expérience artisanale, autonomie réelle. Pensée pour les foyers avec accès à du bois local.',
-      image: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80',
       imageAlt: 'Bois de chauffage soigneusement empilé dans un abri ventilé, prêt pour une chaudière à bûches',
       specs: [{label:'Rendement',value:'88 %'},{label:'Autonomie',value:'12-48 h'},{label:'€/kWh',value:'~0,04',accent:true}],
       principleTitle: 'Combustion à double étage.',
@@ -800,7 +805,7 @@
       title: 'Chaudière gaz à condensation',
       heroTitle: `La <span class="text-sage italic font-extralight">chaudière gaz</span>,<br/>haute performance, raccordement direct.`,
       lede: 'La chaudière gaz à condensation récupère la chaleur des fumées avant qu\'elles ne soient évacuées. Rendement supérieur à 100 % sur PCI, encombrement minimal, raccordement au réseau de ville quand il est disponible.',
-      image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80',
       imageAlt: 'Local technique impeccable abritant une chaudière murale à condensation moderne',
       specs: [{label:'Rendement',value:'109 %',accent:true},{label:'Encombrement',value:'Murale'},{label:'Mise en route',value:'< 2 min'}],
       principleTitle: 'Condenser pour ne rien perdre.',
@@ -839,7 +844,7 @@
       title: 'Chaudière fioul — remplacement',
       heroTitle: `Sortez du <span class="text-sage italic font-extralight">fioul</span>,<br/>nous accompagnons la transition.`,
       lede: 'L\'installation neuve de chaudière fioul est interdite depuis juillet 2022. Quali House intervient pour le remplacement (par PAC ou chaudière biomasse), avec des aides bonifiées pour la sortie du fioul.',
-      image: 'https://images.unsplash.com/photo-1532980400857-e8d9d275d858?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1600&q=80',
       imageAlt: 'Ancien local technique avec cuve fioul, candidate idéale à un remplacement par pompe à chaleur',
       specs: [{label:'Bonus sortie fioul',value:'+1 800 €',accent:true},{label:'Aides totales',value:'70 %'},{label:'Délai',value:'< 6 mois'}],
       principleTitle: 'Trois solutions de remplacement.',
@@ -864,7 +869,7 @@
       title: 'Ballon thermodynamique',
       heroTitle: `Le <span class="text-sage italic font-extralight">ballon thermodynamique</span>,<br/>3× moins de consommation.`,
       lede: 'Un ballon thermodynamique intègre une mini-pompe à chaleur qui capte les calories de l\'air ambiant pour chauffer votre eau sanitaire. Consommation divisée par trois par rapport à un cumulus électrique.',
-      image: 'https://images.unsplash.com/photo-1592928302636-c83cf1e1c887?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80',
       imageAlt: 'Cumulus thermodynamique vertical installé dans un cellier ventilé attenant à un séjour',
       specs: [{label:'COP',value:'3,2',accent:true},{label:'Capacité',value:'200-300 L'},{label:'Confort',value:'A+'}],
       principleTitle: 'Une PAC dédiée à votre eau chaude.',
@@ -928,7 +933,7 @@
       title: 'Système solaire combiné',
       heroTitle: `Le <span class="text-sage italic font-extralight">SSC</span>,<br/>chauffage + ECS au soleil.`,
       lede: 'Le système solaire combiné assure à la fois le chauffage de votre maison et la production d\'eau chaude sanitaire à partir du rayonnement solaire. Jusqu\'à 60 % des besoins thermiques annuels.',
-      image: 'https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80',
       imageAlt: 'Maison contemporaine équipée d\'une grande surface de capteurs solaires intégrés à la toiture',
       specs: [{label:'Couverture',value:'60 %',accent:true},{label:'Capteurs',value:'10-20 m²'},{label:'Stockage',value:'+ tampon'}],
       principleTitle: 'Solaire thermique grande surface.',
@@ -960,7 +965,7 @@
       title: 'Cumulus électrique',
       heroTitle: `Le <span class="text-sage italic font-extralight">cumulus</span>,<br/>simple, fiable, économique à l'achat.`,
       lede: 'Le cumulus électrique reste la solution la plus simple et la moins chère à installer. Quali House intervient pour remplacement à l\'identique, dépannage, ou conseil sur la migration vers un ballon thermodynamique.',
-      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80',
       imageAlt: 'Local technique compact avec cumulus électrique vertical impeccablement installé',
       specs: [{label:'Capacité',value:'100-300 L'},{label:'COP',value:'1,0'},{label:'Coût installation',value:'Faible',accent:true}],
       principleTitle: 'Une résistance, un ballon, c\'est tout.',
@@ -990,7 +995,7 @@
       title: 'Isolation intérieure (ITI)',
       heroTitle: `L'<span class="text-sage italic font-extralight">ITI</span>,<br/>économique et accessible.`,
       lede: 'L\'isolation thermique par l\'intérieur (ITI) consiste à doubler les murs intérieurs avec un isolant. Solution la plus courante en rénovation — adaptée à toutes les configurations, sans toucher à la façade.',
-      image: 'https://images.unsplash.com/photo-1581094488379-6b9b5fbfeb1e?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80',
       imageAlt: 'Pose de panneaux isolants laine de bois sur ossature intérieure pendant un chantier de rénovation',
       specs: [{label:'R',value:'3,7 m²K/W',accent:true},{label:'Épaisseur',value:'12-16 cm'},{label:'Délai',value:'1-3 sem.'}],
       principleTitle: 'Doubler les murs, depuis l\'intérieur.',
@@ -1021,7 +1026,7 @@
       title: 'Isolation extérieure (ITE)',
       heroTitle: `L'<span class="text-sage italic font-extralight">ITE</span>,<br/>le top de la performance.`,
       lede: 'L\'isolation thermique par l\'extérieur enveloppe votre maison d\'un manteau isolant. Performance énergétique maximale, suppression de quasi tous les ponts thermiques, ravalement de façade inclus. La référence des rénovations ambitieuses.',
-      image: 'https://images.unsplash.com/photo-1593696140826-c58b021acf8b?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1600&q=80',
       imageAlt: 'Échafaudage installé pour une isolation par l\'extérieur en cours, panneaux isolants visibles sur la façade',
       specs: [{label:'R',value:'4,4 m²K/W',accent:true},{label:'Ponts thermiques',value:'-95 %'},{label:'Durée',value:'25+ ans'}],
       principleTitle: 'Une enveloppe continue.',
@@ -1079,7 +1084,7 @@
       title: 'Rénovation globale — appartement',
       heroTitle: `<span class="text-sage italic font-extralight">Rénovation appartement.</span><br/>Dans le cadre d'une copro.`,
       lede: 'Rénover un appartement implique de composer avec la copropriété, les parties communes et les règlements d\'urbanisme. Quali House intervient sur les lots privatifs et accompagne les copropriétés sur les opérations collectives.',
-      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80',
       imageAlt: 'Appartement haussmannien rénové aux finitions contemporaines, exemple de réhabilitation appartement',
       specs: [{label:'Gain DPE',value:'1-2 classes'},{label:'Délai',value:'4-10 sem.'},{label:'Copro',value:'Acceptée',accent:true}],
       principleTitle: 'Privatif & collectif coordonnés.',
@@ -1140,7 +1145,7 @@
       title: 'VMC double flux',
       heroTitle: `La <span class="text-sage italic font-extralight">VMC double flux</span>,<br/>récupération de chaleur.`,
       lede: 'La VMC double flux récupère 70 à 90 % de la chaleur de l\'air extrait pour préchauffer l\'air neuf entrant. Indispensable dans une maison bien isolée — c\'est ce qui transforme une simple isolation en vraie performance énergétique.',
-      image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=1600&q=80',
+      image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1600&q=80',
       imageAlt: 'Caisson de VMC double flux moderne installé dans des combles aménagés, gaines isolées visibles',
       specs: [{label:'Récup. chaleur',value:'88 %',accent:true},{label:'Filtration',value:'F7+'},{label:'Conso',value:'80-120 kWh/an'}],
       principleTitle: 'Échanger la chaleur, pas l\'humidité.',
@@ -1220,15 +1225,23 @@
       const s = QH.services[sid];
       if (!s) return '';
       return `
-        <a href="${sid}.html" class="bg-canvas hover:bg-surface/60 transition-colors p-8 md:p-10 group" data-reveal style="--i:${i}">
-          <div class="flex items-center justify-between">
-            <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-sage/80">${String(i+1).padStart(2,'0')}</span>
-            <svg viewBox="0 0 24 24" class="w-4 h-4 text-muted group-hover:text-sage transition-colors" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <a href="${sid}.html" class="group flex flex-col bg-canvas hover:bg-surface/60 transition-all" data-reveal style="--i:${i}">
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img src="${s.image}" alt="${s.imageAlt}" loading="lazy"
+                 class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[600ms] group-hover:scale-[1.04]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent"></div>
+            <div class="absolute top-4 left-4 font-mono text-[11px] uppercase tracking-[0.16em] text-sage/90 bg-canvas/70 backdrop-blur px-2.5 py-1 rounded-md border border-white/[0.06]">${String(i+1).padStart(2,'0')}</div>
           </div>
-          <h3 class="mt-8 text-[24px] md:text-[28px] font-light leading-[1.05] tracking-tightest group-hover:text-sage transition-colors">${s.title}</h3>
-          <p class="mt-4 text-[14.5px] text-muted leading-relaxed line-clamp-3">${s.lede.replace(/<[^>]+>/g,'').substring(0,180)}…</p>
-          <div class="mt-7 flex items-center gap-3 text-[12px]">
-            ${s.specs.slice(0,2).map(sp => `<span class="text-muted"><span class="font-mono text-frost">${sp.value}</span> ${sp.label}</span>`).join('<span class="text-muted/40">·</span>')}
+          <div class="flex-1 p-7 md:p-8 flex flex-col">
+            <h3 class="text-[22px] md:text-[26px] font-light leading-[1.1] tracking-tightest group-hover:text-sage transition-colors">${s.title}</h3>
+            <p class="mt-3 text-[14.5px] text-muted leading-relaxed">${s.lede.replace(/<[^>]+>/g,'').substring(0,140)}…</p>
+            <div class="mt-5 flex items-center gap-3 text-[12px] flex-wrap">
+              ${s.specs.slice(0,2).map(sp => `<span class="text-muted"><span class="font-mono text-frost">${sp.value}</span> ${sp.label}</span>`).join('<span class="text-muted/40">·</span>')}
+            </div>
+            <span class="mt-auto inline-flex items-center gap-2 text-[13.5px] text-sage font-medium pt-7 border-t border-white/[0.06] mt-7">
+              Découvrir
+              <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
           </div>
         </a>`;
     }).join('');

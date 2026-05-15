@@ -131,97 +131,136 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-px bg-line rounded-3xl overflow-hidden border border-line">
+    <!-- Big, image-driven cards. Every card has a "Découvrir →" button so it's obvious it's clickable. -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5">
 
-      <a href="prestations/pompe-a-chaleur/index.html" class="bg-canvas hover:bg-surface/60 transition-colors p-8 md:p-9 lg:col-span-5 relative group" data-reveal style="--i:0">
-        <div class="flex items-center justify-between">
-          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">i. Pompe à chaleur</span>
-          <svg viewBox="0 0 24 24" class="w-5 h-5 text-sage/80 group-hover:text-sage transition-colors" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M12 3v18M8 7l4-4 4 4M8 17l4 4 4-4"/></svg>
-        </div>
-        <h3 class="mt-8 text-[26px] md:text-[30px] font-light leading-[1.05] tracking-micro group-hover:text-sage transition-colors">
-          Jusqu'à <span class="text-sage">4&thinsp;kWh</span> restitués<br/>pour 1 kWh consommé.
-        </h3>
-        <p class="mt-4 text-[15px] leading-relaxed text-muted max-w-[40ch]">
-          PAC air-eau, air-air ou eau-eau. Étude thermique, dimensionnement précis et installation par nos équipes RGE QualiPAC.
-        </p>
-        <div class="mt-7 flex flex-wrap gap-2 text-[12.5px]">
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">PAC air-eau</span>
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">PAC air-air</span>
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">PAC eau-eau</span>
+      <a href="prestations/pompe-a-chaleur/index.html" class="group lg:col-span-7 relative overflow-hidden rounded-3xl border border-white/[0.06] bg-surface/30 hover:border-sage/40 transition-all" data-reveal style="--i:0">
+        <div class="grid md:grid-cols-2 h-full">
+          <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[340px] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=80" alt="Maison contemporaine équipée d'une pompe à chaleur extérieure" loading="lazy"
+                 class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[700ms] group-hover:scale-[1.05]" />
+            <div class="absolute inset-0 bg-gradient-to-tr from-canvas via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4 font-mono text-[11px] uppercase tracking-[0.16em] text-sage/95 bg-canvas/70 backdrop-blur px-2.5 py-1 rounded-md border border-white/[0.06]">i. Pompe à chaleur</div>
+          </div>
+          <div class="p-7 md:p-8 lg:p-10 flex flex-col">
+            <h3 class="text-[26px] md:text-[30px] font-light leading-[1.05] tracking-micro group-hover:text-sage transition-colors">
+              Jusqu'à <span class="text-sage">4&thinsp;kWh</span> restitués pour 1 kWh consommé.
+            </h3>
+            <p class="mt-4 text-[14.5px] leading-relaxed text-muted">PAC air-eau, air-air ou eau-eau. Équipes RGE QualiPAC.</p>
+            <div class="mt-5 flex flex-wrap gap-2 text-[12.5px]">
+              <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">air-eau</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">air-air</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">eau-eau</span>
+            </div>
+            <div class="mt-auto pt-7">
+              <span class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sage/15 border border-sage/30 text-sage text-[13.5px] font-medium group-hover:bg-sage/25 transition-colors">
+                Découvrir les pompes à chaleur
+                <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </div>
+          </div>
         </div>
       </a>
 
-      <a href="prestations/chaudiere/index.html" class="bg-canvas hover:bg-surface/60 transition-colors p-8 md:p-9 lg:col-span-4 relative group" data-reveal style="--i:1">
-        <div class="flex items-center justify-between">
-          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">ii. Chaudière</span>
-          <svg viewBox="0 0 24 24" class="w-5 h-5 text-sage/80 group-hover:text-sage transition-colors" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><rect x="5" y="4" width="14" height="16" rx="1.5"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
+      <a href="prestations/chaudiere/index.html" class="group lg:col-span-5 relative overflow-hidden rounded-3xl border border-white/[0.06] bg-surface/30 hover:border-sage/40 transition-all" data-reveal style="--i:1">
+        <div class="relative aspect-[16/10] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80" alt="Bois et granulés stockés pour chaudière biomasse" loading="lazy"
+               class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[700ms] group-hover:scale-[1.05]" />
+          <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent"></div>
+          <div class="absolute top-4 left-4 font-mono text-[11px] uppercase tracking-[0.16em] text-sage/95 bg-canvas/70 backdrop-blur px-2.5 py-1 rounded-md border border-white/[0.06]">ii. Chaudière</div>
         </div>
-        <h3 class="mt-8 text-[24px] md:text-[28px] font-light leading-[1.05] tracking-micro group-hover:text-sage transition-colors">
-          Biomasse,<br/>haut rendement.
-        </h3>
-        <p class="mt-4 text-[15px] leading-relaxed text-muted max-w-[36ch]">
-          Granulés, bois, gaz ou fioul. Remplacement complet et raccordement aux réseaux existants.
-        </p>
-        <div class="mt-7 flex flex-wrap gap-2 text-[12.5px]">
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Granulés</span>
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Bois</span>
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Gaz</span>
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Fioul</span>
-        </div>
-      </a>
-
-      <a href="prestations/eau-chaude/index.html" class="bg-canvas hover:bg-surface/60 transition-colors p-8 md:p-9 lg:col-span-3 relative group" data-reveal style="--i:2">
-        <div class="flex items-center justify-between">
-          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">iii. Eau chaude</span>
-          <svg viewBox="0 0 24 24" class="w-5 h-5 text-sage/80 group-hover:text-sage transition-colors" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 5-6 8-6 12a6 6 0 0 0 12 0c0-4-3-7-6-12z"/></svg>
-        </div>
-        <h3 class="mt-8 text-[22px] md:text-[24px] font-light leading-[1.05] tracking-micro group-hover:text-sage transition-colors">
-          ECS&nbsp;: 4 technologies.
-        </h3>
-        <p class="mt-4 text-[14px] leading-relaxed text-muted">
-          Du ballon thermo au solaire combiné.
-        </p>
-        <div class="mt-7 flex flex-wrap gap-2 text-[12.5px]">
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Thermo</span>
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Solaire</span>
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">SSC</span>
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Électrique</span>
+        <div class="p-7 md:p-8 flex flex-col">
+          <h3 class="text-[24px] md:text-[26px] font-light leading-[1.05] tracking-micro group-hover:text-sage transition-colors">Biomasse, haut rendement.</h3>
+          <p class="mt-4 text-[14.5px] leading-relaxed text-muted">Granulés, bois, gaz à condensation, remplacement fioul.</p>
+          <div class="mt-5 flex flex-wrap gap-2 text-[12.5px]">
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">granulés</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">bois</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">gaz</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">fioul</span>
+          </div>
+          <div class="mt-auto pt-7">
+            <span class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sage/15 border border-sage/30 text-sage text-[13.5px] font-medium group-hover:bg-sage/25 transition-colors">
+              Voir les chaudières
+              <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
         </div>
       </a>
 
-      <a href="prestations/isolation-renovation/index.html" class="bg-canvas hover:bg-surface/60 transition-colors p-8 md:p-9 lg:col-span-7 relative group" data-reveal style="--i:3">
-        <div class="flex items-center justify-between">
-          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">iv. Isolation &amp; rénovation</span>
-          <svg viewBox="0 0 24 24" class="w-5 h-5 text-sage/80 group-hover:text-sage transition-colors" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-8h6v8"/></svg>
+      <a href="prestations/eau-chaude/index.html" class="group lg:col-span-4 relative overflow-hidden rounded-3xl border border-white/[0.06] bg-surface/30 hover:border-sage/40 transition-all" data-reveal style="--i:2">
+        <div class="relative aspect-[16/10] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=80" alt="Panneaux solaires pour eau chaude sanitaire" loading="lazy"
+               class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[700ms] group-hover:scale-[1.05]" />
+          <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent"></div>
+          <div class="absolute top-4 left-4 font-mono text-[11px] uppercase tracking-[0.16em] text-sage/95 bg-canvas/70 backdrop-blur px-2.5 py-1 rounded-md border border-white/[0.06]">iii. Eau chaude</div>
         </div>
-        <h3 class="mt-8 text-[26px] md:text-[30px] font-light leading-[1.05] tracking-micro group-hover:text-sage transition-colors">
-          De la <span class="text-sage">paroi</span> à la <span class="text-sage">rénovation globale</span>.
-        </h3>
-        <p class="mt-4 text-[15px] leading-relaxed text-muted max-w-[52ch]">
-          Isolation intérieure ou extérieure, qualification Qualibat. Rénovation globale maison ou appartement, en coordination avec l'ANAH et France Rénov'.
-        </p>
-        <div class="mt-7 flex flex-wrap gap-2 text-[12.5px]">
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Isolation intérieure</span>
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Isolation extérieure</span>
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Réno — maison</span>
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Réno — appartement</span>
+        <div class="p-7 md:p-8 flex flex-col">
+          <h3 class="text-[24px] md:text-[26px] font-light leading-[1.05] tracking-micro group-hover:text-sage transition-colors">ECS — 4 technologies.</h3>
+          <p class="mt-4 text-[14.5px] leading-relaxed text-muted">Du ballon thermo au solaire combiné.</p>
+          <div class="mt-5 flex flex-wrap gap-2 text-[12.5px]">
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">thermo</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">solaire</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">SSC</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">électrique</span>
+          </div>
+          <div class="mt-auto pt-7">
+            <span class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sage/15 border border-sage/30 text-sage text-[13.5px] font-medium group-hover:bg-sage/25 transition-colors">
+              Voir l'eau chaude
+              <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
         </div>
       </a>
 
-      <a href="prestations/vmc/index.html" class="bg-canvas hover:bg-surface/60 transition-colors p-8 md:p-9 lg:col-span-5 relative group" data-reveal style="--i:4">
-        <div class="flex items-center justify-between">
-          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">v. Ventilation — VMC</span>
-          <svg viewBox="0 0 24 24" class="w-5 h-5 text-sage/80 group-hover:text-sage transition-colors" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg>
+      <a href="prestations/isolation-renovation/index.html" class="group lg:col-span-8 relative overflow-hidden rounded-3xl border border-white/[0.06] bg-surface/30 hover:border-sage/40 transition-all" data-reveal style="--i:3">
+        <div class="grid md:grid-cols-2 h-full">
+          <div class="p-7 md:p-8 lg:p-10 flex flex-col order-2 md:order-1">
+            <h3 class="text-[26px] md:text-[30px] font-light leading-[1.05] tracking-micro group-hover:text-sage transition-colors">
+              De la <span class="text-sage">paroi</span> à la <span class="text-sage">rénovation globale</span>.
+            </h3>
+            <p class="mt-4 text-[14.5px] leading-relaxed text-muted">Isolation intérieure ou extérieure, rénovation globale en coordination avec l'ANAH et France Rénov'.</p>
+            <div class="mt-5 flex flex-wrap gap-2 text-[12.5px]">
+              <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">ITI</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">ITE</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">réno maison</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">réno appart.</span>
+            </div>
+            <div class="mt-auto pt-7">
+              <span class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sage/15 border border-sage/30 text-sage text-[13.5px] font-medium group-hover:bg-sage/25 transition-colors">
+                Voir l'isolation &amp; rénovation
+                <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[340px] overflow-hidden order-1 md:order-2">
+            <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1400&q=80" alt="Maison rénovée et isolée, façade contemporaine" loading="lazy"
+                 class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[700ms] group-hover:scale-[1.05]" />
+            <div class="absolute inset-0 bg-gradient-to-tl from-canvas via-transparent to-transparent"></div>
+            <div class="absolute top-4 right-4 font-mono text-[11px] uppercase tracking-[0.16em] text-sage/95 bg-canvas/70 backdrop-blur px-2.5 py-1 rounded-md border border-white/[0.06]">iv. Iso &amp; réno</div>
+          </div>
         </div>
-        <h3 class="mt-8 text-[26px] md:text-[30px] font-light leading-[1.05] tracking-micro group-hover:text-sage transition-colors">
-          Un air sain,<br/>sans déperdition.
-        </h3>
-        <p class="mt-4 text-[15px] leading-relaxed text-muted max-w-[40ch]">
-          VMC simple flux pour ventiler efficacement, double flux pour récupérer la chaleur de l'air extrait.
-        </p>
-        <div class="mt-7 flex flex-wrap gap-2 text-[12.5px]">
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">VMC simple flux</span>
-          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">VMC double flux</span>
+      </a>
+
+      <a href="prestations/vmc/index.html" class="group lg:col-span-4 relative overflow-hidden rounded-3xl border border-white/[0.06] bg-surface/30 hover:border-sage/40 transition-all" data-reveal style="--i:4">
+        <div class="relative aspect-[16/10] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80" alt="Intérieur moderne avec ventilation discrète" loading="lazy"
+               class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[700ms] group-hover:scale-[1.05]" />
+          <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent"></div>
+          <div class="absolute top-4 left-4 font-mono text-[11px] uppercase tracking-[0.16em] text-sage/95 bg-canvas/70 backdrop-blur px-2.5 py-1 rounded-md border border-white/[0.06]">v. VMC</div>
+        </div>
+        <div class="p-7 md:p-8 flex flex-col">
+          <h3 class="text-[24px] md:text-[26px] font-light leading-[1.05] tracking-micro group-hover:text-sage transition-colors">Un air sain, sans déperdition.</h3>
+          <p class="mt-4 text-[14.5px] leading-relaxed text-muted">Simple flux ou double flux à récupération de chaleur jusqu'à 88&thinsp;%.</p>
+          <div class="mt-5 flex flex-wrap gap-2 text-[12.5px]">
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">simple flux</span>
+            <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">double flux</span>
+          </div>
+          <div class="mt-auto pt-7">
+            <span class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sage/15 border border-sage/30 text-sage text-[13.5px] font-medium group-hover:bg-sage/25 transition-colors">
+              Voir la VMC
+              <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
         </div>
       </a>
     </div>
