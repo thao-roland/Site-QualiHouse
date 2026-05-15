@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr" data-active="contact">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Contact &amp; test d'éligibilité — Quali House</title>
+<meta name="description" content="Test d'éligibilité aux aides en 90 secondes. Contact direct par email. Intervention dans toute la France métropolitaine." />
+<script src="assets/layout.js" defer></script>
+</head>
+<body>
+
+<main id="main">
+
+<section class="relative pt-36 lg:pt-32 pb-12 md:pb-16 overflow-hidden">
+  <div class="ambient-glow"></div>
+  <div class="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10">
+    <nav class="text-[12px] text-muted mb-8 flex items-center gap-2" data-reveal>
+      <a href="index.html" class="hover:text-ink transition-colors">Accueil</a>
+      <span class="text-muted/50">/</span>
+      <span class="text-frost">Contact</span>
+    </nav>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+      <div class="lg:col-span-5">
+        <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3" data-reveal>
+          <span class="w-6 h-px bg-sage/60"></span>Contact &amp; éligibilité
+        </div>
+        <h1 class="mt-5 font-light text-[44px] sm:text-[54px] lg:text-[62px] leading-[0.98] tracking-tightest" data-reveal style="--i:1">
+          Parlons de<br/><span class="text-sage italic font-extralight">votre projet.</span>
+        </h1>
+      </div>
+      <div class="lg:col-span-7 flex items-end" data-reveal style="--i:2">
+        <p class="text-[16px] md:text-[17px] leading-relaxed text-muted max-w-[58ch]">
+          Cinq questions pour un montant d'aides chiffré, un email pour un échange direct.
+          Nos conseillers répondent sous 48&thinsp;h ouvrées. Intervention dans toute la France métropolitaine.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="eligibilite" class="relative py-20 md:py-28 overflow-hidden">
+  <div class="absolute inset-0 -z-0">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[80%] h-[420px] rounded-full bg-sage/[0.05] blur-3xl"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-[1100px] px-6 md:px-10">
+
+    <div class="text-center max-w-2xl mx-auto" data-reveal>
+      <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center justify-center gap-3">
+        <span class="w-6 h-px bg-sage/60"></span>
+        <span class="font-mono">01</span><span>Test d'éligibilité</span>
+        <span class="w-6 h-px bg-sage/60"></span>
+      </div>
+      <h2 class="mt-6 font-light text-[36px] md:text-[52px] leading-[1.02] tracking-tightest">
+        Vos aides, <span class="text-sage italic font-extralight">en 90 secondes.</span>
+      </h2>
+      <p class="mt-5 text-[16px] text-muted leading-relaxed max-w-[54ch] mx-auto">
+        Cinq questions. Un montant chiffré. Aucune création de compte, aucun engagement.
+      </p>
+    </div>
+
+    <form class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-7" data-reveal style="--i:1"
+          onsubmit="event.preventDefault(); document.getElementById('form-ok').classList.remove('hidden'); this.classList.add('opacity-40','pointer-events-none');">
+
+      <div class="md:col-span-2">
+        <label class="block text-[11.5px] uppercase tracking-[0.16em] text-muted mb-3">Type de logement</label>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <label class="field rounded-xl px-4 py-3.5 text-[14px] cursor-pointer flex items-center gap-2.5 has-[:checked]:border-sage/55 has-[:checked]:bg-sage/[0.04]">
+            <input type="radio" name="type" class="sr-only" checked /><span class="w-1.5 h-1.5 rounded-full bg-muted"></span>Maison
+          </label>
+          <label class="field rounded-xl px-4 py-3.5 text-[14px] cursor-pointer flex items-center gap-2.5 has-[:checked]:border-sage/55 has-[:checked]:bg-sage/[0.04]">
+            <input type="radio" name="type" class="sr-only" /><span class="w-1.5 h-1.5 rounded-full bg-muted"></span>Appartement
+          </label>
+          <label class="field rounded-xl px-4 py-3.5 text-[14px] cursor-pointer flex items-center gap-2.5 has-[:checked]:border-sage/55 has-[:checked]:bg-sage/[0.04]">
+            <input type="radio" name="type" class="sr-only" /><span class="w-1.5 h-1.5 rounded-full bg-muted"></span>Local pro
+          </label>
+          <label class="field rounded-xl px-4 py-3.5 text-[14px] cursor-pointer flex items-center gap-2.5 has-[:checked]:border-sage/55 has-[:checked]:bg-sage/[0.04]">
+            <input type="radio" name="type" class="sr-only" /><span class="w-1.5 h-1.5 rounded-full bg-muted"></span>Autre
+          </label>
+        </div>
+      </div>
+
+      <div class="md:col-span-2">
+        <label class="block text-[11.5px] uppercase tracking-[0.16em] text-muted mb-3">Prestation envisagée</label>
+        <select class="field w-full rounded-xl px-4 py-3.5 text-[15px] appearance-none">
+          <option>Pompe à chaleur — air-eau</option>
+          <option>Pompe à chaleur — air-air</option>
+          <option>Pompe à chaleur — eau-eau (géothermie)</option>
+          <option>Chaudière à granulés</option>
+          <option>Chaudière bois bûches</option>
+          <option>Chaudière gaz à condensation</option>
+          <option>Remplacement chaudière fioul</option>
+          <option>Ballon thermodynamique</option>
+          <option>Chauffe-eau solaire</option>
+          <option>Système solaire combiné (SSC)</option>
+          <option>Cumulus électrique</option>
+          <option>Isolation intérieure (ITI)</option>
+          <option>Isolation extérieure (ITE)</option>
+          <option>Rénovation globale — maison</option>
+          <option>Rénovation globale — appartement</option>
+          <option>VMC simple flux</option>
+          <option>VMC double flux</option>
+          <option>Je ne sais pas — conseillez-moi</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="f-name" class="block text-[11.5px] uppercase tracking-[0.16em] text-muted mb-3">Nom complet</label>
+        <input id="f-name" type="text" required placeholder="Élise Vannier" class="field w-full rounded-xl px-4 py-3.5 text-[15px] placeholder:text-muted/60" />
+      </div>
+      <div>
+        <label for="f-zip" class="block text-[11.5px] uppercase tracking-[0.16em] text-muted mb-3">Code postal</label>
+        <input id="f-zip" type="text" required inputmode="numeric" pattern="[0-9]{5}" placeholder="33000" class="field w-full rounded-xl px-4 py-3.5 text-[15px] font-mono placeholder:text-muted/60" />
+      </div>
+      <div>
+        <label for="f-mail" class="block text-[11.5px] uppercase tracking-[0.16em] text-muted mb-3">Email</label>
+        <input id="f-mail" type="email" required placeholder="elise.vannier@maison.fr" class="field w-full rounded-xl px-4 py-3.5 text-[15px] placeholder:text-muted/60" />
+      </div>
+      <div>
+        <label for="f-tel" class="block text-[11.5px] uppercase tracking-[0.16em] text-muted mb-3">Téléphone <span class="text-muted/60 normal-case tracking-normal">— optionnel</span></label>
+        <input id="f-tel" type="tel" placeholder="+33 6 47 82 19 28" class="field w-full rounded-xl px-4 py-3.5 text-[15px] font-mono placeholder:text-muted/60" />
+      </div>
+
+      <div class="md:col-span-2">
+        <label for="f-note" class="block text-[11.5px] uppercase tracking-[0.16em] text-muted mb-3">Détails sur votre projet <span class="text-muted/60 normal-case tracking-normal">— optionnel</span></label>
+        <textarea id="f-note" rows="3" placeholder="Surface, chauffage actuel, date prévue…" class="field w-full rounded-xl px-4 py-3.5 text-[15px] placeholder:text-muted/60 resize-none"></textarea>
+      </div>
+
+      <div class="md:col-span-2 flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-4 border-t border-white/[0.06]">
+        <p class="text-[12px] text-muted max-w-md leading-relaxed">
+          Vos données restent en France. Un conseiller Quali House vous répond par email sous 48&thinsp;h ouvrées. Vous pouvez tout effacer à la demande.
+        </p>
+        <button type="submit" class="cta-glass inline-flex items-center gap-3 pl-6 pr-3 py-3.5 rounded-xl text-[14.5px] tracking-micro font-medium">
+          <span>Recevoir mon estimation</span>
+          <span class="grid place-items-center w-9 h-9 rounded-lg bg-sage/15 border border-sage/25">
+            <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+          </span>
+        </button>
+      </div>
+
+      <div id="form-ok" class="hidden md:col-span-2 mt-4 cta-glass rounded-xl p-5 flex items-center gap-4">
+        <span class="grid place-items-center w-9 h-9 rounded-lg bg-sage/15 border border-sage/25">
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+        </span>
+        <div>
+          <div class="text-[14px] tracking-micro">Demande enregistrée.</div>
+          <div class="text-[12.5px] text-muted mt-0.5">Un conseiller Quali House vous répond sous 48&thinsp;h ouvrées à l'adresse indiquée.</div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="relative py-20 md:py-28 border-t border-white/[0.05]">
+  <div class="mx-auto max-w-[1400px] px-6 md:px-10">
+    <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3 mb-10" data-reveal>
+      <span class="font-mono">02</span><span class="w-6 h-px bg-sage/60"></span>Contact direct
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-line border border-line rounded-2xl overflow-hidden" data-reveal style="--i:1">
+      <div class="bg-canvas p-7 md:p-10">
+        <div class="text-[11px] uppercase tracking-[0.16em] text-muted">Email direct</div>
+        <a href="mailto:contact@qualihouse.fr" class="mt-3 inline-block font-mono text-[16px] md:text-[18px] text-frost hover:text-sage transition-colors">
+          contact@qualihouse.fr
+        </a>
+        <div class="mt-3 text-[13.5px] text-muted leading-relaxed">Réponse sous 48&thinsp;h ouvrées.</div>
+      </div>
+      <div class="bg-canvas p-7 md:p-10">
+        <div class="text-[11px] uppercase tracking-[0.16em] text-muted">Zone d'intervention</div>
+        <div class="mt-3 text-[16px] md:text-[18px] text-frost">Toute la France métropolitaine</div>
+        <div class="mt-3 text-[13.5px] text-muted leading-relaxed">Équipes salariées RGE — déplacement compris dans le devis.</div>
+      </div>
+      <div class="bg-canvas p-7 md:p-10">
+        <div class="text-[11px] uppercase tracking-[0.16em] text-muted">Disponibilité</div>
+        <div class="mt-3 text-[16px] md:text-[18px] text-frost">Lun&nbsp;— Ven · 8h30 — 19h00</div>
+        <div class="mt-3 text-[13.5px] text-muted leading-relaxed">Étude technique sous 7 jours après votre demande.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+</body>
+</html>
