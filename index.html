@@ -3,40 +3,41 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>Quali House — L'excellence thermique. Le confort durable.</title>
-<meta name="description" content="Pompes à chaleur premium et rénovation énergétique. Réduisez vos factures jusqu'à 60%. Nous gérons vos aides d'État de A à Z." />
+<title>Quali House — Solutions énergétiques performantes, accompagnées et financées</title>
+<meta name="description" content="Pompes à chaleur, chaudières biomasse, isolation, VMC. Solutions énergétiques performantes accompagnées et financées grâce aux aides de l'État. Intervention dans toute la France." />
+<meta property="og:title" content="Quali House — L'excellence thermique. Le confort durable." />
+<meta property="og:description" content="Réduisez vos factures jusqu'à 60 %. Nous gérons vos aides d'État de A à Z." />
+<meta property="og:type" content="website" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<!-- Favicon: inline brand mark -->
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='49' fill='%23ffffff'/><path d='M30 44 L50 28 L70 44' fill='none' stroke='%232E9444' stroke-width='6' stroke-linejoin='round' stroke-linecap='round'/><rect x='38' y='44' width='24' height='22' fill='none' stroke='%231B3A5C' stroke-width='4'/><path d='M50 44 L50 66 M38 55 L62 55' stroke='%231B3A5C' stroke-width='3'/></svg>" />
+
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
     theme: {
       extend: {
         fontFamily: {
-          sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
-          mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+          sans: ['"Plus Jakarta Sans"','system-ui','-apple-system','Segoe UI','sans-serif'],
+          mono: ['"JetBrains Mono"','ui-monospace','monospace'],
         },
         colors: {
-          canvas:   '#0F1115',
-          surface:  '#14171C',
-          line:     '#1E222A',
-          ink:      '#F5F6F7',
-          muted:    '#8B9099',
-          sage:     '#A8C0A6',
-          'sage-deep': '#7B9A7A',
-          frost:    '#C5CDD5',
+          canvas:    '#0F1115',
+          surface:   '#14171C',
+          line:      '#1E222A',
+          ink:       '#F5F6F7',
+          muted:     '#8B9099',
+          sage:      '#A8C0A6',
+          'sage-deep':'#7B9A7A',
+          frost:     '#C5CDD5',
+          'brand-green': '#2E9444',
+          'brand-navy':  '#1B3A5C',
         },
-        letterSpacing: {
-          'micro': '-0.015em',
-          'tightest': '-0.045em',
-        },
-        boxShadow: {
-          'glow-sage': '0 0 0 1px rgba(168,192,166,0.18), 0 8px 32px -8px rgba(168,192,166,0.22)',
-          'inset-edge': 'inset 0 1px 0 rgba(255,255,255,0.08)',
-        },
+        letterSpacing: { 'micro':'-0.015em','tightest':'-0.045em' },
       },
     },
   };
@@ -45,46 +46,33 @@
 <style>
   :root { color-scheme: dark; }
   html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-  body { background: #0F1115; }
+  body { background:#0F1115; }
 
-  /* Subtle warm-tinted grain on a fixed layer — no scroll repaints */
   .grain::before {
-    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 50;
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:50;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-    opacity: 0.5; mix-blend-mode: overlay;
+    opacity:.5; mix-blend-mode:overlay;
   }
-
-  /* Ambient drifting sage glow behind hero */
   .ambient-glow {
-    position: absolute; inset: -10%; pointer-events: none; z-index: 0;
+    position:absolute; inset:-10%; pointer-events:none; z-index:0;
     background:
       radial-gradient(40% 35% at 78% 38%, rgba(168,192,166,0.10), transparent 60%),
       radial-gradient(35% 30% at 18% 70%, rgba(168,192,166,0.06), transparent 60%);
-    filter: blur(10px);
-    animation: drift 22s ease-in-out infinite alternate;
+    filter:blur(10px); animation:drift 22s ease-in-out infinite alternate;
   }
-  @keyframes drift {
-    0%   { transform: translate3d(0,0,0) scale(1); }
-    100% { transform: translate3d(-2%, 1.5%, 0) scale(1.05); }
-  }
+  @keyframes drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-2%,1.5%,0) scale(1.05)} }
 
-  /* Scroll reveal */
-  [data-reveal] {
-    opacity: 0; transform: translate3d(0, 14px, 0);
-    transition: opacity 800ms cubic-bezier(0.16,1,0.3,1), transform 800ms cubic-bezier(0.16,1,0.3,1);
-    will-change: transform, opacity;
-  }
-  [data-reveal].is-visible { opacity: 1; transform: translate3d(0,0,0); }
-
-  /* Stagger via inline --i */
+  [data-reveal] { opacity:0; transform:translate3d(0,14px,0);
+    transition:opacity 800ms cubic-bezier(0.16,1,0.3,1), transform 800ms cubic-bezier(0.16,1,0.3,1);
+    will-change:transform,opacity; }
+  [data-reveal].is-visible { opacity:1; transform:translate3d(0,0,0); }
   [data-reveal][style*="--i"] { transition-delay: calc(var(--i) * 90ms); }
 
-  /* Glass CTA — true edge refraction (inner highlight + tinted glow) */
   .cta-glass {
-    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-    backdrop-filter: blur(14px) saturate(1.1);
-    -webkit-backdrop-filter: blur(14px) saturate(1.1);
-    border: 1px solid rgba(255,255,255,0.10);
+    background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    backdrop-filter:blur(14px) saturate(1.1);
+    -webkit-backdrop-filter:blur(14px) saturate(1.1);
+    border:1px solid rgba(255,255,255,0.10);
     box-shadow:
       inset 0 1px 0 rgba(255,255,255,0.10),
       inset 0 -1px 0 rgba(0,0,0,0.25),
@@ -101,17 +89,9 @@
   }
   .cta-glass:active { transform: translateY(1px) scale(0.992); }
 
-  /* Hairline dividers in sage */
-  .rule-sage {
-    background: linear-gradient(90deg, transparent, rgba(168,192,166,0.35), transparent);
-    height: 1px;
-  }
-
-  /* Marquee */
-  .marquee-track { animation: marquee 38s linear infinite; }
+  .marquee-track { animation: marquee 42s linear infinite; }
   @keyframes marquee { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
 
-  /* Inputs */
   .field {
     background: rgba(255,255,255,0.025);
     border: 1px solid rgba(255,255,255,0.08);
@@ -124,54 +104,225 @@
     box-shadow: 0 0 0 4px rgba(168,192,166,0.08);
   }
 
-  /* Soft photo treatment — desaturate + warm */
   .photo-treat { filter: saturate(0.85) contrast(1.04) brightness(0.92); }
 
-  ::selection { background: rgba(168,192,166,0.35); color: #fff; }
+  /* Mega-menu (desktop hover) */
+  .has-mega { position: relative; }
+  .mega {
+    position: absolute; top: calc(100% + 14px); left: 50%; transform: translate(-50%, 6px);
+    opacity: 0; visibility: hidden;
+    transition: opacity 220ms ease, transform 260ms cubic-bezier(0.16,1,0.3,1);
+    width: min(960px, 92vw); z-index: 60;
+  }
+  .has-mega:hover .mega, .has-mega:focus-within .mega {
+    opacity: 1; visibility: visible; transform: translate(-50%, 0);
+  }
+  /* Bridge over the gap so the menu doesn't close between trigger and panel */
+  .has-mega::after {
+    content:""; position:absolute; left:0; right:0; top:100%; height:22px;
+  }
+
+  /* Mobile menu */
+  #mobile-menu { transform: translateY(-12px); opacity: 0; pointer-events: none;
+    transition: transform 280ms cubic-bezier(0.16,1,0.3,1), opacity 220ms ease; }
+  #mobile-menu.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+
+  ::selection { background: rgba(168,192,166,0.35); color:#fff; }
 </style>
 </head>
 
-<body class="grain font-sans text-ink antialiased selection:bg-sage/30">
+<body class="grain font-sans text-ink antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-3 focus:py-2 focus:bg-sage focus:text-canvas focus:rounded-md">Aller au contenu</a>
+
+<!-- ──────────────────────── LOGO (reusable) ──────────────────────── -->
+<template id="logo-mark">
+  <svg viewBox="0 0 100 100" aria-hidden="true">
+    <circle cx="50" cy="50" r="49" fill="#FFFFFF"/>
+    <path d="M30 44 L50 28 L70 44" fill="none" stroke="#2E9444" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="38" y="44" width="24" height="22" fill="none" stroke="#1B3A5C" stroke-width="4"/>
+    <path d="M50 44 L50 66 M38 55 L62 55" stroke="#1B3A5C" stroke-width="3"/>
+  </svg>
+</template>
 
 <!-- ──────────────────────── NAV ──────────────────────── -->
 <header class="fixed top-0 inset-x-0 z-40">
-  <div class="mx-auto max-w-[1400px] px-6 md:px-10 mt-4">
-    <nav class="cta-glass rounded-2xl px-4 md:px-6 h-14 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2.5 group">
-        <span class="grid place-items-center w-7 h-7 rounded-md bg-sage/15 border border-sage/25">
-          <!-- Mark: minimalist Q -->
-          <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.6">
-            <circle cx="11" cy="11" r="7"/>
-            <path d="M15.5 15.5L19 19"/>
+  <div class="mx-auto max-w-[1400px] px-4 md:px-10 mt-4">
+    <nav class="cta-glass rounded-2xl px-3 md:px-5 h-16 flex items-center justify-between" aria-label="Navigation principale">
+
+      <a href="#" class="flex items-center gap-3 group shrink-0">
+        <span class="w-9 h-9">
+          <svg viewBox="0 0 100 100" class="w-full h-full" aria-hidden="true">
+            <circle cx="50" cy="50" r="49" fill="#FFFFFF"/>
+            <path d="M30 44 L50 28 L70 44" fill="none" stroke="#2E9444" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+            <rect x="38" y="44" width="24" height="22" fill="none" stroke="#1B3A5C" stroke-width="4"/>
+            <path d="M50 44 L50 66 M38 55 L62 55" stroke="#1B3A5C" stroke-width="3"/>
           </svg>
         </span>
-        <span class="text-[15px] tracking-micro font-medium">Quali House</span>
+        <span class="hidden sm:flex flex-col leading-[1.05]">
+          <span class="text-[14px] tracking-[0.18em] font-bold">QUALI</span>
+          <span class="text-[14px] tracking-[0.18em] font-bold text-sage">HOUSE</span>
+        </span>
       </a>
-      <ul class="hidden md:flex items-center gap-7 text-[13.5px] text-muted">
-        <li><a class="hover:text-ink transition-colors" href="#solutions">Solutions</a></li>
-        <li><a class="hover:text-ink transition-colors" href="#methode">Méthode</a></li>
-        <li><a class="hover:text-ink transition-colors" href="#aides">Aides d'État</a></li>
-        <li><a class="hover:text-ink transition-colors" href="#contact">Contact</a></li>
+
+      <!-- Desktop nav -->
+      <ul class="hidden lg:flex items-center gap-1 text-[13.5px]">
+        <li><a class="px-3 py-2 rounded-lg text-muted hover:text-ink transition-colors" href="#accueil">Accueil</a></li>
+
+        <li class="has-mega">
+          <button class="px-3 py-2 rounded-lg text-muted hover:text-ink transition-colors inline-flex items-center gap-1.5" aria-haspopup="true">
+            Nos prestations
+            <svg viewBox="0 0 24 24" class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <!-- Mega panel -->
+          <div class="mega cta-glass rounded-2xl p-6" role="menu">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-5">
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3v18M8 7l4-4 4 4M8 17l4 4 4-4"/></svg>
+                  <span class="text-[12px] uppercase tracking-[0.14em] text-sage">Pompe à chaleur</span>
+                </div>
+                <ul class="space-y-2 text-[13.5px]">
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">PAC air-eau</a></li>
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">PAC air-air</a></li>
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">PAC eau-eau</a></li>
+                </ul>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="5" y="4" width="14" height="16" rx="1.5"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
+                  <span class="text-[12px] uppercase tracking-[0.14em] text-sage">Chaudière</span>
+                </div>
+                <ul class="space-y-2 text-[13.5px]">
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">À granulés</a></li>
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">Bois</a></li>
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">Gaz</a></li>
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">Fioul</a></li>
+                </ul>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 5-6 8-6 12a6 6 0 0 0 12 0c0-4-3-7-6-12z"/></svg>
+                  <span class="text-[12px] uppercase tracking-[0.14em] text-sage">Eau chaude</span>
+                </div>
+                <ul class="space-y-2 text-[13.5px]">
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">Ballon thermodynamique</a></li>
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">Ballon solaire</a></li>
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">Système solaire combiné</a></li>
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">Ballon électrique</a></li>
+                </ul>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-8h6v8"/></svg>
+                  <span class="text-[12px] uppercase tracking-[0.14em] text-sage">Isolation &amp; rénovation</span>
+                </div>
+                <ul class="space-y-2 text-[13.5px]">
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">Isolation intérieure</a></li>
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">Isolation extérieure</a></li>
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">Rénovation globale — maison</a></li>
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">Rénovation globale — appartement</a></li>
+                </ul>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg>
+                  <span class="text-[12px] uppercase tracking-[0.14em] text-sage">VMC</span>
+                </div>
+                <ul class="space-y-2 text-[13.5px]">
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">VMC simple flux</a></li>
+                  <li><a href="#prestations" class="text-muted hover:text-ink transition-colors">VMC double flux</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-6 pt-5 border-t border-white/[0.06] flex items-center justify-between">
+              <p class="text-[12.5px] text-muted">Toutes nos prestations sont éligibles aux aides de l'État.</p>
+              <a href="#eligibilite" class="text-[12.5px] text-sage hover:text-ink transition-colors inline-flex items-center gap-1.5">
+                Calculer mes aides
+                <svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li><a class="px-3 py-2 rounded-lg text-muted hover:text-ink transition-colors" href="#aides">Aides financières</a></li>
+        <li><a class="px-3 py-2 rounded-lg text-muted hover:text-ink transition-colors" href="#demarche">Notre démarche</a></li>
+        <li><a class="px-3 py-2 rounded-lg text-muted hover:text-ink transition-colors" href="#contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="text-[13px] tracking-micro inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-white/10 hover:border-sage/40 hover:text-sage transition-colors">
-        <span class="w-1.5 h-1.5 rounded-full bg-sage animate-pulse"></span>
-        Devis en 48h
-      </a>
+
+      <div class="flex items-center gap-2">
+        <a href="#eligibilite" class="hidden md:inline-flex text-[13px] tracking-micro items-center gap-2 px-3.5 py-1.5 rounded-lg border border-white/10 hover:border-sage/40 hover:text-sage transition-colors">
+          <span class="w-1.5 h-1.5 rounded-full bg-sage animate-pulse"></span>
+          Calculer mes aides
+        </a>
+        <button id="menu-toggle" class="lg:hidden grid place-items-center w-10 h-10 rounded-lg border border-white/10" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6"><path id="menu-icon-bars" d="M4 7h16M4 12h16M4 17h16"/><path id="menu-icon-x" class="hidden" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
     </nav>
+
+    <!-- Mobile menu panel -->
+    <div id="mobile-menu" class="lg:hidden mt-3 cta-glass rounded-2xl p-5">
+      <ul class="space-y-1 text-[14.5px]">
+        <li><a class="block py-2 text-muted hover:text-ink" href="#accueil">Accueil</a></li>
+        <li>
+          <details class="group">
+            <summary class="flex items-center justify-between py-2 cursor-pointer list-none">
+              <span class="text-muted group-open:text-ink">Nos prestations</span>
+              <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <div class="mt-2 pl-3 border-l border-white/[0.06] space-y-3 text-[13.5px]">
+              <div>
+                <div class="text-[11px] uppercase tracking-[0.14em] text-sage mb-1.5">Pompe à chaleur</div>
+                <ul class="space-y-1 text-muted">
+                  <li><a href="#prestations">PAC air-eau</a></li>
+                  <li><a href="#prestations">PAC air-air</a></li>
+                  <li><a href="#prestations">PAC eau-eau</a></li>
+                </ul>
+              </div>
+              <div>
+                <div class="text-[11px] uppercase tracking-[0.14em] text-sage mb-1.5">Chaudière</div>
+                <ul class="space-y-1 text-muted"><li>Granulés</li><li>Bois</li><li>Gaz</li><li>Fioul</li></ul>
+              </div>
+              <div>
+                <div class="text-[11px] uppercase tracking-[0.14em] text-sage mb-1.5">Eau chaude</div>
+                <ul class="space-y-1 text-muted"><li>Thermodynamique</li><li>Solaire</li><li>Système solaire combiné</li><li>Électrique</li></ul>
+              </div>
+              <div>
+                <div class="text-[11px] uppercase tracking-[0.14em] text-sage mb-1.5">Isolation &amp; rénovation</div>
+                <ul class="space-y-1 text-muted"><li>Intérieure</li><li>Extérieure</li><li>Rénovation maison</li><li>Rénovation appartement</li></ul>
+              </div>
+              <div>
+                <div class="text-[11px] uppercase tracking-[0.14em] text-sage mb-1.5">VMC</div>
+                <ul class="space-y-1 text-muted"><li>Simple flux</li><li>Double flux</li></ul>
+              </div>
+            </div>
+          </details>
+        </li>
+        <li><a class="block py-2 text-muted hover:text-ink" href="#aides">Aides financières</a></li>
+        <li><a class="block py-2 text-muted hover:text-ink" href="#demarche">Notre démarche</a></li>
+        <li><a class="block py-2 text-muted hover:text-ink" href="#contact">Contact</a></li>
+      </ul>
+      <a href="#eligibilite" class="mt-4 inline-flex w-full justify-center items-center gap-2 px-4 py-3 rounded-xl bg-sage/15 border border-sage/30 text-sage text-[14px]">
+        Calculer mes aides
+        <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
   </div>
 </header>
 
+<main id="main">
+
 <!-- ──────────────────────── HERO ──────────────────────── -->
-<section class="relative min-h-[100dvh] overflow-hidden pt-32 md:pt-28 pb-20">
+<section id="accueil" class="relative min-h-[100dvh] overflow-hidden pt-36 lg:pt-32 pb-20">
   <div class="ambient-glow"></div>
 
   <div class="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
 
-    <!-- Left: copy (asymmetric — 5 of 12) -->
     <div class="lg:col-span-5">
       <div class="flex items-center gap-3 text-[11.5px] uppercase tracking-[0.18em] text-muted" data-reveal style="--i:0">
         <span class="w-6 h-px bg-sage/60"></span>
-        Rénovation énergétique &middot; RGE QualiPAC
+        Rénovation énergétique &middot; Intervention partout en France
       </div>
 
       <h1 class="mt-6 font-light text-[44px] sm:text-[56px] lg:text-[68px] leading-[0.98] tracking-tightest" data-reveal style="--i:1">
@@ -179,9 +330,9 @@
         <span class="block text-sage italic font-extralight mt-1">Le confort durable.</span>
       </h1>
 
-      <p class="mt-7 text-[16px] md:text-[17px] leading-relaxed text-muted max-w-[44ch]" data-reveal style="--i:2">
-        Réduisez vos factures jusqu'à <span class="text-frost">60&thinsp;%</span>.
-        Nous gérons vos aides d'État — MaPrimeRénov', CEE, TVA 5,5&thinsp;% — de A à Z.
+      <p class="mt-7 text-[16px] md:text-[17px] leading-relaxed text-muted max-w-[48ch]" data-reveal style="--i:2">
+        Solutions énergétiques performantes, accompagnées et financées grâce aux aides de l'État.
+        Pompes à chaleur, chaudières biomasse, isolation, VMC&nbsp;— de l'étude au suivi, nous prenons tout en charge.
       </p>
 
       <div class="mt-10 flex flex-wrap items-center gap-4" data-reveal style="--i:3">
@@ -193,65 +344,57 @@
             </svg>
           </span>
         </a>
-        <a href="#methode" class="text-[14px] text-muted hover:text-ink transition-colors inline-flex items-center gap-2 py-3">
-          Notre méthode
+        <a href="#demarche" class="text-[14px] text-muted hover:text-ink transition-colors inline-flex items-center gap-2 py-3">
+          Notre démarche en 5 étapes
           <svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"/></svg>
         </a>
       </div>
 
-      <!-- Trust micro-row -->
-      <div class="mt-12 grid grid-cols-3 gap-6 max-w-md" data-reveal style="--i:4">
+      <!-- 4 chiffres clés (réels) -->
+      <div class="mt-12 grid grid-cols-2 gap-y-7 gap-x-6 max-w-lg" data-reveal style="--i:4">
         <div>
-          <div class="font-mono text-2xl text-frost tracking-tight">2&thinsp;418</div>
-          <div class="mt-1 text-[11px] uppercase tracking-[0.14em] text-muted">Foyers équipés</div>
+          <div class="font-mono text-[28px] text-frost tracking-tight leading-none">60&thinsp;%</div>
+          <div class="mt-2 text-[11.5px] uppercase tracking-[0.14em] text-muted">d'économies sur votre facture</div>
         </div>
         <div>
-          <div class="font-mono text-2xl text-frost tracking-tight">4,87<span class="text-muted text-base">/5</span></div>
-          <div class="mt-1 text-[11px] uppercase tracking-[0.14em] text-muted">Avis vérifiés</div>
+          <div class="font-mono text-[28px] text-frost tracking-tight leading-none">500<span class="text-muted">+</span></div>
+          <div class="mt-2 text-[11.5px] uppercase tracking-[0.14em] text-muted">chantiers réalisés</div>
         </div>
         <div>
-          <div class="font-mono text-2xl text-frost tracking-tight">−57,3&thinsp;%</div>
-          <div class="mt-1 text-[11px] uppercase tracking-[0.14em] text-muted">Facture moyenne</div>
+          <div class="font-mono text-[28px] text-frost tracking-tight leading-none">20&thinsp;000&nbsp;€</div>
+          <div class="mt-2 text-[11.5px] uppercase tracking-[0.14em] text-muted">d'aides mobilisées en moyenne</div>
+        </div>
+        <div>
+          <div class="font-mono text-[28px] text-frost tracking-tight leading-none">100&thinsp;%</div>
+          <div class="mt-2 text-[11.5px] uppercase tracking-[0.14em] text-muted">de prise en charge par nos équipes</div>
         </div>
       </div>
     </div>
 
-    <!-- Right: image (7 of 12, offset upward) -->
     <div class="lg:col-span-7 relative" data-reveal style="--i:2">
       <div class="relative aspect-[5/6] lg:aspect-[4/5] rounded-[28px] overflow-hidden border border-white/[0.06]">
         <img
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
-          alt="Villa moderne contemporaine au coucher du soleil avec lignes architecturales épurées"
+          alt="Villa moderne en bois clair et béton, baignée par la lumière du soir, avec architecture épurée"
           class="absolute inset-0 w-full h-full object-cover photo-treat"
           loading="eager" />
-        <!-- Gradient fade into canvas -->
         <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/10 to-transparent"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-canvas/40 via-transparent to-transparent"></div>
 
-        <!-- Floating spec chip — heat pump module -->
+        <!-- Floating module spec -->
         <div class="absolute left-5 bottom-5 md:left-7 md:bottom-7 cta-glass rounded-2xl p-4 md:p-5 max-w-[280px]">
           <div class="flex items-center gap-2.5">
             <span class="w-2 h-2 rounded-full bg-sage animate-pulse"></span>
-            <span class="text-[11px] uppercase tracking-[0.14em] text-muted">Module extérieur</span>
+            <span class="text-[11px] uppercase tracking-[0.14em] text-muted">PAC air-eau installée</span>
           </div>
-          <div class="mt-2.5 font-mono text-[13px] text-frost">Atlantic Alféa Extensa A.I. R32</div>
+          <div class="mt-2.5 font-mono text-[13px] text-frost">Daikin Altherma 3 R32</div>
           <div class="mt-3 grid grid-cols-3 gap-3 text-[11px]">
-            <div>
-              <div class="text-muted uppercase tracking-[0.12em]">COP</div>
-              <div class="font-mono text-frost mt-0.5">4,82</div>
-            </div>
-            <div>
-              <div class="text-muted uppercase tracking-[0.12em]">dB(A)</div>
-              <div class="font-mono text-frost mt-0.5">35</div>
-            </div>
-            <div>
-              <div class="text-muted uppercase tracking-[0.12em]">A++</div>
-              <div class="font-mono text-sage mt-0.5">Certifié</div>
-            </div>
+            <div><div class="text-muted uppercase tracking-[0.12em]">COP</div><div class="font-mono text-frost mt-0.5">4,82</div></div>
+            <div><div class="text-muted uppercase tracking-[0.12em]">dB(A)</div><div class="font-mono text-frost mt-0.5">35</div></div>
+            <div><div class="text-muted uppercase tracking-[0.12em]">Classe</div><div class="font-mono text-sage mt-0.5">A++</div></div>
           </div>
         </div>
 
-        <!-- Scroll cue -->
         <div class="absolute top-5 right-5 md:top-7 md:right-7 flex items-center gap-2 text-[10.5px] uppercase tracking-[0.2em] text-muted">
           <span>Défiler</span>
           <span class="w-px h-8 bg-gradient-to-b from-sage/60 to-transparent"></span>
@@ -261,137 +404,152 @@
   </div>
 </section>
 
-<!-- ──────────────────────── PARTNERS MARQUEE ──────────────────────── -->
-<section class="relative border-y border-white/[0.05] py-8 overflow-hidden" data-reveal>
+<!-- ──────────────────────── CERTIFICATIONS — marquee ──────────────────────── -->
+<section class="relative border-y border-white/[0.05] py-7 overflow-hidden" data-reveal>
   <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-canvas to-transparent z-10 pointer-events-none"></div>
   <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-canvas to-transparent z-10 pointer-events-none"></div>
   <div class="flex marquee-track w-max">
-    <ul class="flex items-center gap-14 px-8 text-muted text-[14px] tracking-micro">
-      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span> Atlantic</li>
-      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span> Daikin</li>
-      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span> Mitsubishi Electric</li>
-      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span> Panasonic Aquarea</li>
-      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span> Viessmann</li>
-      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span> MaPrimeRénov'</li>
-      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span> RGE QualiPAC</li>
+    <!-- Two duplicate tracks for seamless loop -->
+    <ul class="flex items-center gap-12 px-8 text-[13.5px] tracking-micro text-muted whitespace-nowrap">
+      <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-sage/70"></span><span class="text-frost">RGE QualiPAC</span> <span>— pompes à chaleur</span></li>
+      <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-sage/70"></span><span class="text-frost">Qualibat</span> <span>— isolation</span></li>
+      <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-sage/70"></span><span class="text-frost">Garantie décennale</span> <span>— toute installation</span></li>
+      <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-sage/70"></span><span class="text-frost">Partenaire ANAH</span></li>
+      <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-sage/70"></span><span class="text-frost">MaPrimeRénov'</span> <span>— mandataire</span></li>
+      <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-sage/70"></span><span class="text-frost">France Rénov'</span> <span>— conseiller agréé</span></li>
     </ul>
-    <ul aria-hidden="true" class="flex items-center gap-14 px-8 text-muted text-[14px] tracking-micro">
-      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span> Atlantic</li>
-      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span> Daikin</li>
-      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span> Mitsubishi Electric</li>
-      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span> Panasonic Aquarea</li>
-      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span> Viessmann</li>
-      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span> MaPrimeRénov'</li>
-      <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage/60"></span> RGE QualiPAC</li>
+    <ul aria-hidden="true" class="flex items-center gap-12 px-8 text-[13.5px] tracking-micro text-muted whitespace-nowrap">
+      <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-sage/70"></span><span class="text-frost">RGE QualiPAC</span> <span>— pompes à chaleur</span></li>
+      <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-sage/70"></span><span class="text-frost">Qualibat</span> <span>— isolation</span></li>
+      <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-sage/70"></span><span class="text-frost">Garantie décennale</span> <span>— toute installation</span></li>
+      <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-sage/70"></span><span class="text-frost">Partenaire ANAH</span></li>
+      <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-sage/70"></span><span class="text-frost">MaPrimeRénov'</span> <span>— mandataire</span></li>
+      <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-sage/70"></span><span class="text-frost">France Rénov'</span> <span>— conseiller agréé</span></li>
     </ul>
   </div>
 </section>
 
-<!-- ──────────────────────── BENTO — 3 PILIERS ──────────────────────── -->
-<section id="solutions" class="relative py-28 md:py-36">
+<!-- ──────────────────────── PRESTATIONS ──────────────────────── -->
+<section id="prestations" class="relative py-28 md:py-36">
   <div class="mx-auto max-w-[1400px] px-6 md:px-10">
 
-    <!-- Section header: split-aligned -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16 md:mb-20">
       <div class="lg:col-span-4" data-reveal>
         <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3">
           <span class="font-mono">01</span>
           <span class="w-6 h-px bg-sage/60"></span>
-          Nos engagements
+          Nos prestations
         </div>
       </div>
       <div class="lg:col-span-8" data-reveal style="--i:1">
-        <h2 class="font-light text-[34px] md:text-[46px] leading-[1.04] tracking-tightest max-w-[18ch]">
-          Trois piliers,<br/>
-          <span class="text-muted">une seule promesse</span>&nbsp;: votre confort.
+        <h2 class="font-light text-[34px] md:text-[46px] leading-[1.04] tracking-tightest max-w-[22ch]">
+          Cinq familles de solutions,<br/>
+          <span class="text-muted">une seule logique</span>&nbsp;: votre confort énergétique.
         </h2>
       </div>
     </div>
 
-    <!-- Asymmetric bento (1.2fr 1fr 1.2fr on lg — anti-3-equal-cards) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1.2fr] gap-px bg-line rounded-3xl overflow-hidden border border-line">
+    <!-- Asymmetric bento — 5 categories, 2/3/3/2/2 col spans across 12 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-px bg-line rounded-3xl overflow-hidden border border-line">
 
-      <!-- Card 1 — Économie -->
-      <article class="bg-canvas p-8 md:p-10 lg:p-12 group relative" data-reveal style="--i:0">
+      <article class="bg-canvas p-8 md:p-9 lg:col-span-5 relative" data-reveal style="--i:0">
         <div class="flex items-center justify-between">
-          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">i. Économie</span>
-          <svg viewBox="0 0 24 24" class="w-5 h-5 text-sage/70 group-hover:text-sage transition-colors" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
-            <path d="M12 3v18"/><path d="M17 8c-1.5-2-3.5-3-5-3-3 0-5 1.8-5 4 0 5 10 3 10 8 0 2.2-2.2 4-5 4-2 0-4-1-5-3"/>
-          </svg>
+          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">i. Pompe à chaleur</span>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 text-sage/80" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M12 3v18M8 7l4-4 4 4M8 17l4 4 4-4"/></svg>
         </div>
-        <h3 class="mt-10 text-[26px] md:text-[30px] font-light leading-[1.05] tracking-micro">
-          Jusqu'à <span class="text-sage">60&thinsp;%</span><br/>de facture en moins.
+        <h3 class="mt-8 text-[26px] md:text-[30px] font-light leading-[1.05] tracking-micro">
+          Jusqu'à <span class="text-sage">4&thinsp;kWh</span> restitués<br/>pour 1 kWh consommé.
         </h3>
-        <p class="mt-5 text-[15px] leading-relaxed text-muted max-w-[36ch]">
-          Une pompe à chaleur restitue jusqu'à 4&thinsp;kWh de chaleur pour 1&thinsp;kWh consommé. Vos économies sont chiffrées avant signature.
+        <p class="mt-4 text-[15px] leading-relaxed text-muted max-w-[40ch]">
+          PAC air-eau, air-air ou eau-eau. Étude thermique, dimensionnement précis et installation par nos équipes RGE QualiPAC.
         </p>
-        <div class="mt-10 pt-6 border-t border-white/[0.06] flex items-baseline gap-4">
-          <div class="font-mono text-[42px] text-frost leading-none tracking-tight">−1&thinsp;284&thinsp;€</div>
-          <div class="text-[12px] text-muted uppercase tracking-[0.14em]">par an &middot; foyer 110 m²</div>
+        <div class="mt-7 flex flex-wrap gap-2 text-[12.5px]">
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">PAC air-eau</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">PAC air-air</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">PAC eau-eau</span>
         </div>
       </article>
 
-      <!-- Card 2 — Expertise (narrower, denser) -->
-      <article class="bg-canvas p-8 md:p-10 lg:p-12 relative" data-reveal style="--i:1">
+      <article class="bg-canvas p-8 md:p-9 lg:col-span-4 relative" data-reveal style="--i:1">
         <div class="flex items-center justify-between">
-          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">ii. Expertise</span>
-          <svg viewBox="0 0 24 24" class="w-5 h-5 text-sage/70" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 21l4-4"/><path d="M14 4l6 6"/><path d="M9 9l6 6"/><path d="M5 19c0-2 1-4 3-5l8-8 3 3-8 8c-1 2-3 3-5 3z"/>
-          </svg>
+          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">ii. Chaudière</span>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 text-sage/80" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><rect x="5" y="4" width="14" height="16" rx="1.5"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
         </div>
-        <h3 class="mt-10 text-[26px] md:text-[30px] font-light leading-[1.05] tracking-micro">
-          Artisans <span class="text-sage">RGE QualiPAC</span>, certifiés.
+        <h3 class="mt-8 text-[24px] md:text-[28px] font-light leading-[1.05] tracking-micro">
+          Biomasse,<br/>haut rendement.
         </h3>
-        <p class="mt-5 text-[15px] leading-relaxed text-muted max-w-[34ch]">
-          Étude thermique, dimensionnement, pose et mise en service par nos équipes salariées. Aucune sous-traitance.
+        <p class="mt-4 text-[15px] leading-relaxed text-muted max-w-[36ch]">
+          Granulés, bois, gaz ou fioul. Remplacement complet et raccordement aux réseaux existants.
         </p>
-        <ul class="mt-10 pt-6 border-t border-white/[0.06] space-y-3 text-[13.5px]">
-          <li class="flex items-center justify-between">
-            <span class="text-muted">Garantie pièces &amp; main d'œuvre</span>
-            <span class="font-mono text-frost">5 ans</span>
-          </li>
-          <li class="flex items-center justify-between">
-            <span class="text-muted">Délai d'intervention</span>
-            <span class="font-mono text-frost">48 h</span>
-          </li>
-          <li class="flex items-center justify-between">
-            <span class="text-muted">Études thermiques/an</span>
-            <span class="font-mono text-frost">+1 200</span>
-          </li>
-        </ul>
+        <div class="mt-7 flex flex-wrap gap-2 text-[12.5px]">
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Granulés</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Bois</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Gaz</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Fioul</span>
+        </div>
       </article>
 
-      <!-- Card 3 — Écologie -->
-      <article class="bg-canvas p-8 md:p-10 lg:p-12 relative overflow-hidden" data-reveal style="--i:2">
+      <article class="bg-canvas p-8 md:p-9 lg:col-span-3 relative" data-reveal style="--i:2">
         <div class="flex items-center justify-between">
-          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">iii. Écologie</span>
-          <svg viewBox="0 0 24 24" class="w-5 h-5 text-sage/70" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2a10 10 0 0 0-7 17c2 2 5 3 7 3 0-3-1-6-3-8-2-2-4-3-7-3"/><path d="M22 5c-3 0-6 1-8 3-2 2-3 5-3 8 0 3 3 6 6 7"/>
-          </svg>
+          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">iii. Eau chaude</span>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 text-sage/80" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 5-6 8-6 12a6 6 0 0 0 12 0c0-4-3-7-6-12z"/></svg>
         </div>
-        <h3 class="mt-10 text-[26px] md:text-[30px] font-light leading-[1.05] tracking-micro">
-          <span class="text-sage">2,3 tonnes</span> de CO₂ évitées chaque année.
+        <h3 class="mt-8 text-[22px] md:text-[24px] font-light leading-[1.05] tracking-micro">
+          ECS&nbsp;: 4 technologies.
         </h3>
-        <p class="mt-5 text-[15px] leading-relaxed text-muted max-w-[36ch]">
-          Une PAC remplace une chaudière fioul ou gaz et divise vos émissions par cinq. Énergie renouvelable, fluide R32 nouvelle génération.
+        <p class="mt-4 text-[14px] leading-relaxed text-muted">
+          Du ballon thermo au solaire combiné.
         </p>
-        <div class="mt-10 pt-6 border-t border-white/[0.06]">
-          <div class="text-[11px] uppercase tracking-[0.14em] text-muted mb-3">Réduction des émissions</div>
-          <div class="relative h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
-            <div class="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-sage-deep to-sage" style="width:82%"></div>
-          </div>
-          <div class="mt-2 flex justify-between font-mono text-[11px] text-muted">
-            <span>0 t</span><span class="text-sage">−2,3 t</span><span>2,8 t</span>
-          </div>
+        <div class="mt-7 flex flex-wrap gap-2 text-[12.5px]">
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Thermodynamique</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Solaire</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">SSC</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Électrique</span>
+        </div>
+      </article>
+
+      <article class="bg-canvas p-8 md:p-9 lg:col-span-7 relative" data-reveal style="--i:3">
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">iv. Isolation &amp; rénovation</span>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 text-sage/80" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-8h6v8"/></svg>
+        </div>
+        <h3 class="mt-8 text-[26px] md:text-[30px] font-light leading-[1.05] tracking-micro">
+          De la <span class="text-sage">paroi</span> à la <span class="text-sage">rénovation globale</span>.
+        </h3>
+        <p class="mt-4 text-[15px] leading-relaxed text-muted max-w-[52ch]">
+          Isolation intérieure ou extérieure, qualification Qualibat. Rénovation globale maison ou appartement, en coordination avec l'ANAH et France Rénov'.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-2 text-[12.5px]">
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Isolation intérieure</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Isolation extérieure</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Rénovation — maison</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">Rénovation — appartement</span>
+        </div>
+      </article>
+
+      <article class="bg-canvas p-8 md:p-9 lg:col-span-5 relative" data-reveal style="--i:4">
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">v. Ventilation — VMC</span>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 text-sage/80" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg>
+        </div>
+        <h3 class="mt-8 text-[26px] md:text-[30px] font-light leading-[1.05] tracking-micro">
+          Un air sain,<br/>sans déperdition.
+        </h3>
+        <p class="mt-4 text-[15px] leading-relaxed text-muted max-w-[40ch]">
+          VMC simple flux pour ventiler efficacement, double flux pour récupérer la chaleur de l'air extrait.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-2 text-[12.5px]">
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">VMC simple flux</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-frost">VMC double flux</span>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ──────────────────────── FULL-WIDTH LIFESTYLE ──────────────────────── -->
-<section id="methode" class="relative">
-  <div class="relative h-[78vh] min-h-[520px] max-h-[860px] overflow-hidden">
+<!-- ──────────────────────── LIFESTYLE BAND ──────────────────────── -->
+<section class="relative">
+  <div class="relative h-[72vh] min-h-[480px] max-h-[820px] overflow-hidden">
     <img
       src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2400&q=85"
       alt="Salon designer baigné de lumière chaude, mobilier en bois clair et textiles naturels"
@@ -405,7 +563,7 @@
         <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3">
           <span class="font-mono">02</span>
           <span class="w-6 h-px bg-sage/60"></span>
-          Le confort, sans concession
+          Confort sans concession
         </div>
         <h2 class="mt-6 font-light text-[36px] md:text-[54px] leading-[1.02] tracking-tightest">
           Un foyer à <span class="text-sage italic font-extralight">19,5&thinsp;°C</span>,<br/>
@@ -420,7 +578,7 @@
   </div>
 </section>
 
-<!-- ──────────────────────── MÉTHODE — 4 ÉTAPES ──────────────────────── -->
+<!-- ──────────────────────── AIDES FINANCIÈRES ──────────────────────── -->
 <section id="aides" class="relative py-28 md:py-36">
   <div class="mx-auto max-w-[1400px] px-6 md:px-10">
 
@@ -429,46 +587,188 @@
         <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3">
           <span class="font-mono">03</span>
           <span class="w-6 h-px bg-sage/60"></span>
-          Aides d'État — gérées de A à Z
+          Aides à la rénovation énergétique
         </div>
       </div>
       <div class="lg:col-span-8" data-reveal style="--i:1">
-        <h2 class="font-light text-[34px] md:text-[46px] leading-[1.04] tracking-tightest max-w-[20ch]">
-          Quatre étapes. <span class="text-muted">Zéro paperasse de votre côté.</span>
+        <h2 class="font-light text-[34px] md:text-[46px] leading-[1.04] tracking-tightest max-w-[22ch]">
+          Quatre dispositifs.<br/>
+          <span class="text-muted">Un seul interlocuteur — nous.</span>
+        </h2>
+        <p class="mt-5 text-[15.5px] text-muted leading-relaxed max-w-[58ch]">
+          Nous cumulons et montons l'intégralité de votre dossier d'aides. En moyenne, <span class="text-frost">20&thinsp;000&nbsp;€</span> d'aides mobilisées par chantier.
+        </p>
+      </div>
+    </div>
+
+    <!-- 4 aides — asymmetric grid 7/5, then 5/7 -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <article class="lg:col-span-7 bg-surface/40 border border-white/[0.06] rounded-3xl p-8 md:p-10 relative overflow-hidden" data-reveal>
+        <div class="absolute -right-10 -top-10 w-48 h-48 rounded-full bg-sage/[0.06] blur-3xl pointer-events-none"></div>
+        <div class="flex items-center justify-between relative">
+          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-sage">Aide principale</span>
+          <span class="text-[11px] uppercase tracking-[0.14em] text-muted">État · ANAH</span>
+        </div>
+        <h3 class="mt-8 text-[32px] md:text-[40px] font-light leading-[1.02] tracking-tightest">
+          MaPrime<span class="italic font-extralight">Rénov'</span>
+        </h3>
+        <p class="mt-5 text-[15.5px] text-muted leading-relaxed max-w-[52ch]">
+          La prime de l'État pour vos travaux d'économie d'énergie. Versée directement, calculée selon vos revenus et le gain énergétique.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a href="#eligibilite" class="cta-glass inline-flex items-center gap-3 pl-5 pr-3 py-3 rounded-xl text-[14px] tracking-micro font-medium">
+            Vérifier mon éligibilité
+            <span class="grid place-items-center w-8 h-8 rounded-lg bg-sage/15 border border-sage/25">
+              <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
+          <span class="text-[12.5px] text-muted font-mono">Mandataire MaPrimeRénov' — dépôt &amp; suivi inclus</span>
+        </div>
+      </article>
+
+      <article class="lg:col-span-5 bg-surface/40 border border-white/[0.06] rounded-3xl p-8 md:p-10" data-reveal style="--i:1">
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">Énergéticiens privés</span>
+        </div>
+        <h3 class="mt-8 text-[26px] md:text-[30px] font-light leading-[1.04] tracking-micro">
+          Coup de pouce<br/>énergie / CEE
+        </h3>
+        <p class="mt-4 text-[15px] leading-relaxed text-muted max-w-[40ch]">
+          Prime versée par les fournisseurs d'énergie pour vos travaux éligibles. Cumulable avec MaPrimeRénov'.
+        </p>
+        <a href="#eligibilite" class="mt-8 inline-flex items-center gap-2 text-[13.5px] text-sage hover:text-frost transition-colors">
+          Calculer ma prime
+          <svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <article class="lg:col-span-5 bg-surface/40 border border-white/[0.06] rounded-3xl p-8 md:p-10" data-reveal style="--i:2">
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">Fiscalité travaux</span>
+        </div>
+        <h3 class="mt-8 text-[26px] md:text-[30px] font-light leading-[1.04] tracking-micro">
+          TVA à <span class="text-sage">5,5&thinsp;%</span>
+        </h3>
+        <p class="mt-4 text-[15px] leading-relaxed text-muted max-w-[40ch]">
+          Taux réduit appliqué directement sur votre devis pour les travaux d'amélioration énergétique en résidence principale.
+        </p>
+        <a href="#aides" class="mt-8 inline-flex items-center gap-2 text-[13.5px] text-sage hover:text-frost transition-colors">
+          En savoir plus
+          <svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <article class="lg:col-span-7 bg-surface/40 border border-white/[0.06] rounded-3xl p-8 md:p-10 relative overflow-hidden" data-reveal style="--i:3">
+        <div class="absolute -left-10 -bottom-10 w-48 h-48 rounded-full bg-sage/[0.06] blur-3xl pointer-events-none"></div>
+        <div class="flex items-center justify-between relative">
+          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">Prêt sans intérêt</span>
+          <span class="text-[11px] uppercase tracking-[0.14em] text-sage">0&thinsp;%</span>
+        </div>
+        <h3 class="mt-8 text-[30px] md:text-[36px] font-light leading-[1.02] tracking-tightest">
+          Éco-PTZ — financez le reste à charge
+        </h3>
+        <p class="mt-5 text-[15.5px] text-muted leading-relaxed max-w-[58ch]">
+          Jusqu'à 50&thinsp;000&nbsp;€ empruntables sans intérêt sur 20 ans pour vos travaux de rénovation énergétique.
+        </p>
+        <a href="#eligibilite" class="mt-9 cta-glass inline-flex items-center gap-3 pl-5 pr-3 py-3 rounded-xl text-[14px] tracking-micro font-medium">
+          Simuler mon prêt
+          <span class="grid place-items-center w-8 h-8 rounded-lg bg-sage/15 border border-sage/25">
+            <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </article>
+    </div>
+
+    <!-- Bottom band — main CTA -->
+    <div class="mt-12 rounded-3xl border border-sage/20 bg-gradient-to-br from-sage/[0.05] to-transparent p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6" data-reveal>
+      <div>
+        <h3 class="text-[24px] md:text-[28px] font-light leading-[1.1] tracking-tightest">
+          Calculer mes aides <span class="text-sage italic font-extralight">gratuitement</span>
+        </h3>
+        <p class="mt-2 text-[14.5px] text-muted">Nous cumulons toutes vos aides — sans engagement, en 90 secondes.</p>
+      </div>
+      <a href="#eligibilite" class="cta-glass inline-flex items-center gap-3 pl-6 pr-3 py-3.5 rounded-xl text-[14.5px] tracking-micro font-medium self-start md:self-auto whitespace-nowrap">
+        Lancer la simulation
+        <span class="grid place-items-center w-9 h-9 rounded-lg bg-sage/15 border border-sage/25">
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── NOTRE DÉMARCHE — 5 étapes ──────────────────────── -->
+<section id="demarche" class="relative py-28 md:py-36 border-t border-white/[0.05]">
+  <div class="mx-auto max-w-[1400px] px-6 md:px-10">
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
+      <div class="lg:col-span-4" data-reveal>
+        <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3">
+          <span class="font-mono">04</span>
+          <span class="w-6 h-px bg-sage/60"></span>
+          Notre démarche
+        </div>
+      </div>
+      <div class="lg:col-span-8" data-reveal style="--i:1">
+        <h2 class="font-light text-[34px] md:text-[46px] leading-[1.04] tracking-tightest max-w-[22ch]">
+          Cinq étapes.<br/>
+          <span class="text-muted">Zéro paperasse de votre côté.</span>
         </h2>
       </div>
     </div>
 
-    <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-line border border-line rounded-2xl overflow-hidden">
+    <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-px bg-line border border-line rounded-2xl overflow-hidden">
       <li class="bg-canvas p-7 md:p-8 relative" data-reveal style="--i:0">
-        <div class="font-mono text-[12px] text-sage/80">Étape 01</div>
-        <h4 class="mt-6 text-[19px] font-medium tracking-micro">Diagnostic gratuit</h4>
-        <p class="mt-3 text-[14px] text-muted leading-relaxed">Étude thermique sur place. Audit DPE, dimensionnement, devis chiffré.</p>
-        <div class="mt-8 font-mono text-[11px] text-muted uppercase tracking-[0.14em]">Sous 48&thinsp;h</div>
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[12px] text-sage/80">Étape 01</span>
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <h4 class="mt-7 text-[19px] font-medium tracking-micro">Demande en ligne</h4>
+        <p class="mt-3 text-[14px] text-muted leading-relaxed">Test d'éligibilité, montant chiffré des aides. Sans engagement.</p>
+        <div class="mt-8 font-mono text-[11px] text-muted uppercase tracking-[0.14em]">90 secondes</div>
       </li>
       <li class="bg-canvas p-7 md:p-8 relative" data-reveal style="--i:1">
-        <div class="font-mono text-[12px] text-sage/80">Étape 02</div>
-        <h4 class="mt-6 text-[19px] font-medium tracking-micro">Montage des aides</h4>
-        <p class="mt-3 text-[14px] text-muted leading-relaxed">MaPrimeRénov', CEE, éco-PTZ, TVA 5,5&thinsp;%. Nous montons le dossier.</p>
-        <div class="mt-8 font-mono text-[11px] text-muted uppercase tracking-[0.14em]">Reste à charge calculé</div>
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[12px] text-sage/80">Étape 02</span>
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <h4 class="mt-7 text-[19px] font-medium tracking-micro">Visite technique</h4>
+        <p class="mt-3 text-[14px] text-muted leading-relaxed">Étude thermique sur place, dimensionnement, devis chiffré et garanti.</p>
+        <div class="mt-8 font-mono text-[11px] text-muted uppercase tracking-[0.14em]">Sous 7 jours</div>
       </li>
       <li class="bg-canvas p-7 md:p-8 relative" data-reveal style="--i:2">
-        <div class="font-mono text-[12px] text-sage/80">Étape 03</div>
-        <h4 class="mt-6 text-[19px] font-medium tracking-micro">Pose en 1 à 2 jours</h4>
-        <p class="mt-3 text-[14px] text-muted leading-relaxed">Équipe salariée RGE QualiPAC. Dépose ancien équipement incluse.</p>
-        <div class="mt-8 font-mono text-[11px] text-muted uppercase tracking-[0.14em]">Chantier propre, garanti</div>
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[12px] text-sage/80">Étape 03</span>
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <h4 class="mt-7 text-[19px] font-medium tracking-micro">Dossier d'aide</h4>
+        <p class="mt-3 text-[14px] text-muted leading-relaxed">MaPrimeRénov', CEE, TVA 5,5&thinsp;%, Éco-PTZ. Montage complet, on dépose pour vous.</p>
+        <div class="mt-8 font-mono text-[11px] text-muted uppercase tracking-[0.14em]">Reste à charge calculé</div>
       </li>
       <li class="bg-canvas p-7 md:p-8 relative" data-reveal style="--i:3">
-        <div class="font-mono text-[12px] text-sage/80">Étape 04</div>
-        <h4 class="mt-6 text-[19px] font-medium tracking-micro">Suivi 10 ans</h4>
-        <p class="mt-3 text-[14px] text-muted leading-relaxed">Mise en service, télémaintenance, contrôle annuel obligatoire offert.</p>
-        <div class="mt-8 font-mono text-[11px] text-muted uppercase tracking-[0.14em]">Garantie pièces 5 ans</div>
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[12px] text-sage/80">Étape 04</span>
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <h4 class="mt-7 text-[19px] font-medium tracking-micro">Chantier clé en main</h4>
+        <p class="mt-3 text-[14px] text-muted leading-relaxed">Pose par nos équipes RGE QualiPAC &amp; Qualibat. Dépose ancien matériel incluse.</p>
+        <div class="mt-8 font-mono text-[11px] text-muted uppercase tracking-[0.14em]">1 à 5 jours</div>
+      </li>
+      <li class="bg-canvas p-7 md:p-8 relative" data-reveal style="--i:4">
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[12px] text-sage/80">Étape 05</span>
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h4 class="mt-7 text-[19px] font-medium tracking-micro">Réception &amp; suivi</h4>
+        <p class="mt-3 text-[14px] text-muted leading-relaxed">Mise en service, formation, garantie décennale, suivi annuel.</p>
+        <div class="mt-8 font-mono text-[11px] text-muted uppercase tracking-[0.14em]">Garantie 10 ans</div>
       </li>
     </ol>
   </div>
 </section>
 
-<!-- ──────────────────────── ÉLIGIBILITÉ / CONTACT ──────────────────────── -->
+<!-- ──────────────────────── CONTACT / ÉLIGIBILITÉ ──────────────────────── -->
 <section id="contact" class="relative py-28 md:py-36 overflow-hidden">
   <div class="absolute inset-0 -z-0">
     <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[80%] h-[420px] rounded-full bg-sage/[0.05] blur-3xl"></div>
@@ -479,7 +779,7 @@
     <div class="text-center max-w-2xl mx-auto" data-reveal>
       <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center justify-center gap-3">
         <span class="w-6 h-px bg-sage/60"></span>
-        <span class="font-mono">04</span>
+        <span class="font-mono">05</span>
         <span>Test d'éligibilité</span>
         <span class="w-6 h-px bg-sage/60"></span>
       </div>
@@ -487,7 +787,7 @@
         Vos aides, <span class="text-sage italic font-extralight">en 90 secondes.</span>
       </h2>
       <p class="mt-5 text-[16px] text-muted leading-relaxed max-w-[54ch] mx-auto">
-        Cinq questions. Un montant chiffré. Aucune création de compte, aucun engagement.
+        Cinq questions. Un montant chiffré. Aucune création de compte, aucun engagement. Intervention dans toute la France.
       </p>
     </div>
 
@@ -497,26 +797,33 @@
         <label class="block text-[11.5px] uppercase tracking-[0.16em] text-muted mb-3">Type de logement</label>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
           <label class="field rounded-xl px-4 py-3.5 text-[14px] cursor-pointer flex items-center gap-2.5 has-[:checked]:border-sage/55 has-[:checked]:bg-sage/[0.04]">
-            <input type="radio" name="type" class="sr-only" checked />
-            <span class="w-1.5 h-1.5 rounded-full bg-muted"></span>
-            Maison
+            <input type="radio" name="type" class="sr-only" checked /><span class="w-1.5 h-1.5 rounded-full bg-muted"></span>Maison
           </label>
           <label class="field rounded-xl px-4 py-3.5 text-[14px] cursor-pointer flex items-center gap-2.5 has-[:checked]:border-sage/55 has-[:checked]:bg-sage/[0.04]">
-            <input type="radio" name="type" class="sr-only" />
-            <span class="w-1.5 h-1.5 rounded-full bg-muted"></span>
-            Appartement
+            <input type="radio" name="type" class="sr-only" /><span class="w-1.5 h-1.5 rounded-full bg-muted"></span>Appartement
           </label>
           <label class="field rounded-xl px-4 py-3.5 text-[14px] cursor-pointer flex items-center gap-2.5 has-[:checked]:border-sage/55 has-[:checked]:bg-sage/[0.04]">
-            <input type="radio" name="type" class="sr-only" />
-            <span class="w-1.5 h-1.5 rounded-full bg-muted"></span>
-            Local pro
+            <input type="radio" name="type" class="sr-only" /><span class="w-1.5 h-1.5 rounded-full bg-muted"></span>Local pro
           </label>
           <label class="field rounded-xl px-4 py-3.5 text-[14px] cursor-pointer flex items-center gap-2.5 has-[:checked]:border-sage/55 has-[:checked]:bg-sage/[0.04]">
-            <input type="radio" name="type" class="sr-only" />
-            <span class="w-1.5 h-1.5 rounded-full bg-muted"></span>
-            Autre
+            <input type="radio" name="type" class="sr-only" /><span class="w-1.5 h-1.5 rounded-full bg-muted"></span>Autre
           </label>
         </div>
+      </div>
+
+      <div class="md:col-span-2">
+        <label class="block text-[11.5px] uppercase tracking-[0.16em] text-muted mb-3">Prestation envisagée</label>
+        <select class="field w-full rounded-xl px-4 py-3.5 text-[15px] appearance-none">
+          <option>Pompe à chaleur — air-eau</option>
+          <option>Pompe à chaleur — air-air</option>
+          <option>Pompe à chaleur — eau-eau</option>
+          <option>Chaudière à granulés / bois / gaz / fioul</option>
+          <option>Eau chaude — ballon thermo / solaire / SSC / électrique</option>
+          <option>Isolation intérieure ou extérieure</option>
+          <option>Rénovation globale — maison ou appartement</option>
+          <option>VMC simple flux ou double flux</option>
+          <option>Je ne sais pas — conseillez-moi</option>
+        </select>
       </div>
 
       <div>
@@ -532,8 +839,8 @@
         <input id="f-mail" type="email" required placeholder="elise.vannier@maison.fr" class="field w-full rounded-xl px-4 py-3.5 text-[15px] placeholder:text-muted/60" />
       </div>
       <div>
-        <label for="f-tel" class="block text-[11.5px] uppercase tracking-[0.16em] text-muted mb-3">Téléphone</label>
-        <input id="f-tel" type="tel" required placeholder="+33 6 47 82 19 28" class="field w-full rounded-xl px-4 py-3.5 text-[15px] font-mono placeholder:text-muted/60" />
+        <label for="f-tel" class="block text-[11.5px] uppercase tracking-[0.16em] text-muted mb-3">Téléphone <span class="text-muted/60 normal-case tracking-normal">— optionnel</span></label>
+        <input id="f-tel" type="tel" placeholder="+33 6 47 82 19 28" class="field w-full rounded-xl px-4 py-3.5 text-[15px] font-mono placeholder:text-muted/60" />
       </div>
 
       <div class="md:col-span-2">
@@ -543,14 +850,12 @@
 
       <div class="md:col-span-2 flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-4 border-t border-white/[0.06]">
         <p class="text-[12px] text-muted max-w-md leading-relaxed">
-          Vos données restent en France. Aucun spam, un seul appel sous 48&thinsp;h. Vous pouvez tout effacer à la demande.
+          Vos données restent en France. Un conseiller Quali House vous recontacte par email. Vous pouvez tout effacer à la demande.
         </p>
         <button type="submit" class="cta-glass inline-flex items-center gap-3 pl-6 pr-3 py-3.5 rounded-xl text-[14.5px] tracking-micro font-medium">
           <span>Recevoir mon estimation</span>
           <span class="grid place-items-center w-9 h-9 rounded-lg bg-sage/15 border border-sage/25">
-            <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>
-            </svg>
+            <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
           </span>
         </button>
       </div>
@@ -561,53 +866,93 @@
         </span>
         <div>
           <div class="text-[14px] tracking-micro">Demande enregistrée.</div>
-          <div class="text-[12.5px] text-muted mt-0.5">Un conseiller Quali House vous rappelle sous 48&thinsp;h ouvrées.</div>
+          <div class="text-[12.5px] text-muted mt-0.5">Un conseiller Quali House vous répond sous 48&thinsp;h ouvrées à l'adresse indiquée.</div>
         </div>
       </div>
     </form>
+
+    <!-- Contact direct -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-px bg-line border border-line rounded-2xl overflow-hidden">
+      <div class="bg-canvas p-7 md:p-8">
+        <div class="text-[11px] uppercase tracking-[0.16em] text-muted">Email direct</div>
+        <a href="mailto:contact@qualihouse.fr" class="mt-3 inline-block font-mono text-[15.5px] text-frost hover:text-sage transition-colors">
+          contact@qualihouse.fr
+        </a>
+        <div class="mt-2 text-[13px] text-muted">Réponse sous 48&thinsp;h ouvrées.</div>
+      </div>
+      <div class="bg-canvas p-7 md:p-8">
+        <div class="text-[11px] uppercase tracking-[0.16em] text-muted">Zone d'intervention</div>
+        <div class="mt-3 text-[15.5px] text-frost">Toute la France métropolitaine</div>
+        <div class="mt-2 text-[13px] text-muted">Équipes salariées RGE — déplacement compris dans le devis.</div>
+      </div>
+      <div class="bg-canvas p-7 md:p-8">
+        <div class="text-[11px] uppercase tracking-[0.16em] text-muted">Disponibilité</div>
+        <div class="mt-3 text-[15.5px] text-frost">Lun&nbsp;— Ven · 8h30 — 19h00</div>
+        <div class="mt-2 text-[13px] text-muted">Étude technique sous 7 jours après votre demande.</div>
+      </div>
+    </div>
   </div>
 </section>
+
+</main>
 
 <!-- ──────────────────────── FOOTER ──────────────────────── -->
 <footer class="relative border-t border-white/[0.05]">
   <div class="mx-auto max-w-[1400px] px-6 md:px-10 py-14 grid grid-cols-2 md:grid-cols-12 gap-10">
     <div class="col-span-2 md:col-span-5">
-      <div class="flex items-center gap-2.5">
-        <span class="grid place-items-center w-7 h-7 rounded-md bg-sage/15 border border-sage/25">
-          <svg viewBox="0 0 24 24" class="w-4 h-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M15.5 15.5L19 19"/></svg>
+      <div class="flex items-center gap-3">
+        <span class="w-10 h-10">
+          <svg viewBox="0 0 100 100" class="w-full h-full" aria-hidden="true">
+            <circle cx="50" cy="50" r="49" fill="#FFFFFF"/>
+            <path d="M30 44 L50 28 L70 44" fill="none" stroke="#2E9444" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+            <rect x="38" y="44" width="24" height="22" fill="none" stroke="#1B3A5C" stroke-width="4"/>
+            <path d="M50 44 L50 66 M38 55 L62 55" stroke="#1B3A5C" stroke-width="3"/>
+          </svg>
         </span>
-        <span class="text-[15px] tracking-micro font-medium">Quali House</span>
+        <div class="flex flex-col leading-[1.05]">
+          <span class="text-[14px] tracking-[0.18em] font-bold">QUALI</span>
+          <span class="text-[14px] tracking-[0.18em] font-bold text-sage">HOUSE</span>
+        </div>
       </div>
       <p class="mt-5 text-[14px] text-muted leading-relaxed max-w-md">
-        Rénovation énergétique &amp; pompes à chaleur premium.<br/>
-        Artisans RGE QualiPAC, équipes salariées, suivi 10 ans.
+        Solutions énergétiques performantes, accompagnées et financées grâce aux aides de l'État.<br/>
+        Pompes à chaleur, chaudières, eau chaude, isolation, VMC — partout en France.
       </p>
-      <div class="mt-6 font-mono text-[12px] text-muted">SIRET 894 217 053 00018 &middot; RGE QPAC 2024-3471</div>
+      <ul class="mt-6 grid grid-cols-2 gap-x-4 gap-y-1.5 text-[12px] text-muted font-mono max-w-md">
+        <li>RGE QualiPAC</li>
+        <li>Qualibat</li>
+        <li>Garantie décennale</li>
+        <li>Partenaire ANAH</li>
+        <li>Mandataire MaPrimeRénov'</li>
+        <li>France Rénov' agréé</li>
+      </ul>
     </div>
 
+    <div class="md:col-span-3">
+      <div class="text-[11.5px] uppercase tracking-[0.16em] text-muted mb-4">Nos prestations</div>
+      <ul class="space-y-2.5 text-[14px]">
+        <li><a href="#prestations" class="text-muted hover:text-sage transition-colors">Pompes à chaleur</a></li>
+        <li><a href="#prestations" class="text-muted hover:text-sage transition-colors">Chaudières</a></li>
+        <li><a href="#prestations" class="text-muted hover:text-sage transition-colors">Eau chaude sanitaire</a></li>
+        <li><a href="#prestations" class="text-muted hover:text-sage transition-colors">Isolation &amp; rénovation</a></li>
+        <li><a href="#prestations" class="text-muted hover:text-sage transition-colors">VMC simple &amp; double flux</a></li>
+      </ul>
+    </div>
     <div class="md:col-span-2">
       <div class="text-[11.5px] uppercase tracking-[0.16em] text-muted mb-4">Maison</div>
       <ul class="space-y-2.5 text-[14px]">
-        <li><a href="#solutions" class="hover:text-sage transition-colors">Solutions</a></li>
-        <li><a href="#methode" class="hover:text-sage transition-colors">Méthode</a></li>
-        <li><a href="#aides" class="hover:text-sage transition-colors">Aides d'État</a></li>
-        <li><a href="#contact" class="hover:text-sage transition-colors">Contact</a></li>
+        <li><a href="#accueil" class="text-muted hover:text-sage transition-colors">Accueil</a></li>
+        <li><a href="#aides" class="text-muted hover:text-sage transition-colors">Aides financières</a></li>
+        <li><a href="#demarche" class="text-muted hover:text-sage transition-colors">Notre démarche</a></li>
+        <li><a href="#contact" class="text-muted hover:text-sage transition-colors">Contact</a></li>
       </ul>
     </div>
     <div class="md:col-span-2">
-      <div class="text-[11.5px] uppercase tracking-[0.16em] text-muted mb-4">Études</div>
-      <ul class="space-y-2.5 text-[14px] text-muted">
-        <li>Maisons individuelles</li>
-        <li>Copropriétés</li>
-        <li>Tertiaire</li>
-      </ul>
-    </div>
-    <div class="md:col-span-3">
       <div class="text-[11.5px] uppercase tracking-[0.16em] text-muted mb-4">Contact</div>
-      <ul class="space-y-2.5 text-[14px] font-mono">
-        <li class="text-frost">+33 5 47 82 19 28</li>
-        <li class="text-muted">contact@qualihouse.fr</li>
-        <li class="text-muted mt-3 text-[12.5px]">Lun—Ven &middot; 8h30—19h00</li>
+      <ul class="space-y-2.5 text-[14px]">
+        <li><a href="mailto:contact@qualihouse.fr" class="font-mono text-frost hover:text-sage transition-colors">contact@qualihouse.fr</a></li>
+        <li class="text-muted">Toute la France</li>
+        <li class="text-muted text-[12.5px] mt-3">Lun—Ven · 8h30—19h00</li>
       </ul>
     </div>
   </div>
@@ -623,8 +968,9 @@
   </div>
 </footer>
 
-<!-- ──────────────────────── JS — scroll reveal ──────────────────────── -->
+<!-- ──────────────────────── JS ──────────────────────── -->
 <script>
+  // Scroll reveal
   (function () {
     const els = document.querySelectorAll('[data-reveal]');
     if (!('IntersectionObserver' in window) || !els.length) {
@@ -640,6 +986,29 @@
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     els.forEach(el => io.observe(el));
+  })();
+
+  // Mobile menu toggle
+  (function () {
+    const btn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const bars = document.getElementById('menu-icon-bars');
+    const x = document.getElementById('menu-icon-x');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+      bars.classList.toggle('hidden', open);
+      x.classList.toggle('hidden', !open);
+    });
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        menu.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        bars.classList.remove('hidden');
+        x.classList.add('hidden');
+      });
+    });
   })();
 </script>
 </body>
