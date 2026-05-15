@@ -37,6 +37,14 @@
   }
   const R = (typeof window.QH_ROOT === 'string') ? window.QH_ROOT : siteRoot();
 
+  /* ─── Reveal the page once styles are ready (critical.css hides body until then) ─── */
+  let revealed = false;
+  function revealPage() {
+    if (revealed) return;
+    revealed = true;
+    document.body.classList.add('qh-ready');
+  }
+
   /* ─── Inject <head> assets (fonts, tailwind config, styles, favicon) ─── */
   function injectHead() {
     // Fonts
@@ -72,8 +80,12 @@
 
       const tw = document.createElement('script');
       tw.src = 'https://cdn.tailwindcss.com';
+      // Reveal the page (critical.css keeps body hidden) once Tailwind has loaded.
+      tw.onload = () => { setTimeout(revealPage, 60); };
       document.head.appendChild(tw);
     }
+    // Failsafe: reveal anyway after 1.4 s even if Tailwind never loads (offline, blocked CDN…)
+    setTimeout(revealPage, 1400);
 
     // Global styles
     const style = document.createElement('style');
@@ -640,6 +652,15 @@
   };
   const aideAllArray = [aideAll.mpr, aideAll.cee, aideAll.tva, aideAll.eco];
 
+  /* ===========================================================================
+     POUR CHANGER LES IMAGES DES PRESTATIONS — c'est ici, et nulle part ailleurs.
+     Chaque service ci-dessous a un champ  image: '...'  et  imageAlt: '...'.
+     Remplacez l'URL du champ `image` par celle de votre choix (photo réelle de
+     vos chantiers idéalement). L'image est automatiquement réutilisée partout :
+     page Prestations, hub de catégorie, et fiche détaillée du service.
+     Le champ `imageAlt` est la description (accessibilité + SEO).
+     Images d'accueil : voir index.html (cartes) — cherchez `images.unsplash`.
+     =========================================================================== */
   window.QH.services = {
 
     'air-eau': {
@@ -1296,6 +1317,98 @@
     `;
   };
 
+  /* ─── Prestations hub: ALL 17 services, grouped by family, each clickable with image ─── */
+  QH.renderPrestationsHub = function () {
+    document.title = 'Nos prestations — Quali House';
+    const mainEl = document.getElementById('main');
+    if (!mainEl) return;
+
+    const order = ['pompe-a-chaleur','chaudiere','eau-chaude','isolation-renovation','vmc'];
+
+    const serviceCard = (sid, i) => {
+      const s = QH.services[sid];
+      if (!s) return '';
+      return `
+        <a href="${R}prestations/${s.categorySlug}/${sid}.html" class="group flex flex-col bg-canvas hover:bg-surface/60 transition-all" data-reveal style="--i:${i}">
+          <div class="relative aspect-[16/11] overflow-hidden">
+            <img src="${s.image}" alt="${s.imageAlt}" loading="lazy"
+                 class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[600ms] group-hover:scale-[1.05]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/25 to-transparent"></div>
+          </div>
+          <div class="flex-1 p-6 md:p-7 flex flex-col">
+            <h3 class="text-[20px] md:text-[23px] font-light leading-[1.12] tracking-tightest group-hover:text-sage transition-colors">${s.title}</h3>
+            <p class="mt-3 text-[14px] text-muted leading-relaxed">${s.lede.replace(/<[^>]+>/g,'').substring(0,120)}…</p>
+            <div class="mt-5 flex items-center gap-3 text-[12px] flex-wrap">
+              ${s.specs.slice(0,2).map(sp => `<span class="text-muted"><span class="font-mono text-frost">${sp.value}</span> ${sp.label}</span>`).join('<span class="text-muted/40">·</span>')}
+            </div>
+            <span class="mt-auto inline-flex items-center gap-2 text-[13px] text-sage font-medium pt-6 mt-6 border-t border-white/[0.06]">
+              Découvrir
+              <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </a>`;
+    };
+
+    const sections = order.map((slug, idx) => {
+      const cat = CATEGORIES[slug];
+      const cols = cat.services.length >= 4 ? 'lg:grid-cols-4' : (cat.services.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2');
+      return `
+        <section class="relative py-16 md:py-20 ${idx>0 ? 'border-t border-white/[0.05]' : ''}">
+          <div class="mx-auto max-w-[1400px] px-6 md:px-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 mb-9 md:mb-11 items-end">
+              <div class="lg:col-span-7" data-reveal>
+                <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3">
+                  <span class="font-mono">${String(idx+1).padStart(2,'0')}</span>
+                  <span class="w-6 h-px bg-sage/60"></span>${cat.label}
+                </div>
+                <h2 class="mt-4 font-light text-[30px] md:text-[40px] leading-[1.05] tracking-tightest">${cat.tagline}</h2>
+              </div>
+              <div class="lg:col-span-5 flex lg:justify-end" data-reveal style="--i:1">
+                <a href="${R}prestations/${slug}/index.html" class="inline-flex items-center gap-2 text-[13.5px] text-sage hover:text-frost transition-colors">
+                  Tout voir — ${cat.label.toLowerCase()}
+                  <svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 ${cols} gap-px bg-line rounded-3xl overflow-hidden border border-line">
+              ${cat.services.map((sid,i) => serviceCard(sid,i)).join('')}
+            </div>
+          </div>
+        </section>`;
+    }).join('');
+
+    mainEl.innerHTML = `
+      <section class="relative pt-36 lg:pt-32 pb-10 md:pb-14 overflow-hidden">
+        <div class="ambient-glow"></div>
+        <div class="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10">
+          <nav class="text-[12px] text-muted mb-8 flex items-center gap-2" data-reveal>
+            <a href="${R}index.html" class="hover:text-ink transition-colors">Accueil</a>
+            <span class="text-muted/50">/</span>
+            <span class="text-frost">Nos prestations</span>
+          </nav>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+            <div class="lg:col-span-6">
+              <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3" data-reveal>
+                <span class="w-6 h-px bg-sage/60"></span>Nos prestations
+              </div>
+              <h1 class="mt-5 font-light text-[44px] sm:text-[54px] lg:text-[62px] leading-[0.98] tracking-tightest" data-reveal style="--i:1">
+                Tout pour votre <span class="text-sage italic font-extralight">confort énergétique.</span>
+              </h1>
+            </div>
+            <div class="lg:col-span-6 flex items-end" data-reveal style="--i:2">
+              <p class="text-[16px] md:text-[17px] leading-relaxed text-muted max-w-[58ch]">
+                Cinq familles, dix-sept solutions. Cliquez sur n'importe quel équipement ci-dessous pour
+                accéder à sa fiche détaillée — caractéristiques, fonctionnement, aides applicables.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      ${sections}
+      ${QH.ctaStrip()}
+    `;
+  };
+
   /* ─── Auto-init when DOM ready ─── */
   function ready(fn) {
     if (document.readyState !== 'loading') fn();
@@ -1310,6 +1423,9 @@
     }
     if (document.body.dataset.qhCategory && CATEGORIES[document.body.dataset.qhCategory]) {
       QH.renderCategory(document.body.dataset.qhCategory);
+    }
+    if (document.body.dataset.qhPrestations === 'hub') {
+      QH.renderPrestationsHub();
     }
     // Fill <div data-qh-insert="ctaStrip"> placeholders
     document.querySelectorAll('[data-qh-insert]').forEach(el => {

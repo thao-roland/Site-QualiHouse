@@ -1,0 +1,35 @@
+/* Quali House — Critical above-the-fold CSS
+   Loaded synchronously by every page via <link rel="stylesheet">.
+   Goal: prevent FOUC (Flash of Unstyled Content) during page transitions.
+   The body is kept hidden until layout.js confirms Tailwind has hydrated. */
+
+:root { color-scheme: dark; }
+*,*::before,*::after { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+
+body {
+  background: #0F1115;
+  color: #F5F6F7;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  /* Hidden until layout.js + Tailwind are ready */
+  visibility: hidden;
+}
+body.qh-ready { visibility: visible; }
+
+/* Failsafe: if JS is disabled or layout.js fails, still show the page */
+.qh-no-js body { visibility: visible !important; }
+
+img { max-width: 100%; height: auto; display: block; }
+svg { max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; background: none; border: 0; color: inherit; padding: 0; }
+
+::selection { background: rgba(168,192,166,0.35); color: #fff; }
+
+/* Brief soft fade-in for the page once visible, smooths perception */
+body.qh-ready { animation: qh-page-in 220ms ease-out; }
+@keyframes qh-page-in { from { opacity: .6; } to { opacity: 1; } }
