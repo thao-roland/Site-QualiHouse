@@ -834,45 +834,6 @@
       aides: aideAllArray,
     },
 
-    'gaz': {
-      categorySlug: 'chaudiere', categoryLabel: 'Chaudière',
-      title: 'Chaudière gaz à condensation',
-      heroTitle: `La <span class="text-sage italic font-extralight">chaudière gaz</span>,<br/>haute performance, raccordement direct.`,
-      lede: 'La chaudière gaz à condensation récupère la chaleur des fumées avant qu\'elles ne soient évacuées. Rendement supérieur à 100 % sur PCI, encombrement minimal, raccordement au réseau de ville quand il est disponible.',
-      image: 'assets/images/gaz.png',
-      imageAlt: 'Chaudière à gaz murale moderne installée dans un local technique',
-      specs: [{label:'Rendement',value:'109 %',accent:true},{label:'Encombrement',value:'Murale'},{label:'Mise en route',value:'< 2 min'}],
-      principleTitle: 'Condenser pour ne rien perdre.',
-      principle: [
-        { title:'Combustion étanche', body:'Le brûleur module sa puissance selon la demande, en ventouse étanche — pas d\'air comburant prélevé dans la maison.' },
-        { title:'Récupération sur fumées', body:'Les fumées sont refroidies sous le point de rosée. La vapeur d\'eau qu\'elles contiennent se condense et libère sa chaleur latente.' },
-        { title:'Distribution', body:'La chaleur récupérée alimente le circuit de chauffage et le ballon ECS intégré ou indépendant.' },
-      ],
-      benefitsTitle: 'Compacte, rapide, fiable.',
-      benefits: [
-        { title:'Rendement > 100 % (PCI)', body:'Jusqu\'à 109 % grâce à la récupération sur fumées — le maximum thermique extractible.' },
-        { title:'Modèles muraux compacts', body:'Format placard, intégrable cuisine ou cellier. Pas de chaufferie dédiée.' },
-        { title:'Confort ECS immédiat', body:'Production d\'eau chaude instantanée ou via micro-ballon, débit constant.' },
-        { title:'Investissement maîtrisé', body:'Coût d\'installation le plus bas du marché du chauffage central.' },
-      ],
-      specsTable: [
-        {label:'Rendement sur PCI',value:'107 à 109 %'},
-        {label:'Puissance',value:'12 à 35 kW'},
-        {label:'Combustible',value:'Gaz naturel ou propane'},
-        {label:'Évacuation',value:'Ventouse horizontale ou verticale'},
-        {label:'Régulation',value:'Modulante 1:10'},
-        {label:'Production ECS',value:'Instantanée ou ballon 60-200 L'},
-        {label:'Garantie',value:'2 à 5 ans selon modèle'},
-      ],
-      aides: [
-        { name:"MaPrimeRénov'", note:'Plus éligible depuis 2023 pour la chaudière gaz seule.', eligible:false },
-        aideAll.cee,
-        aideAll.tva,
-        aideAll.eco,
-      ],
-      aidesIntro: 'Depuis 2023, la chaudière gaz seule n\'est plus éligible à MaPrimeRénov\'. Elle reste éligible aux CEE et à la TVA 5,5 %, et peut s\'intégrer dans un bouquet de travaux pour bénéficier de l\'Éco-PTZ.',
-    },
-
     'fioul': {
       categorySlug: 'chaudiere', categoryLabel: 'Chaudière',
       title: 'Chaudière fioul — remplacement',
