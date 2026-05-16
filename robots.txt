@@ -1,0 +1,7 @@
+# robots.txt — Quali House
+# Site entièrement indexable. Les ressources CSS/JS restent accessibles
+# aux robots pour permettre le rendu correct des pages.
+User-agent: *
+Allow: /
+
+Sitemap: https://qualihouse.fr/sitemap.xml

@@ -486,9 +486,42 @@
       const cfg = window.QH.services[id];
       if (!cfg) { document.body.innerHTML = '<p style="color:#fff;padding:40px">Service introuvable.</p>'; return; }
       document.title = `${cfg.title} — Quali House`;
-      const metaDesc = document.createElement('meta');
-      metaDesc.name = 'description'; metaDesc.content = cfg.lede.replace(/<[^>]+>/g,'');
-      document.head.appendChild(metaDesc);
+      const plainLede = cfg.lede.replace(/<[^>]+>/g, '');
+      // Update the existing <meta name="description"> rather than adding a duplicate
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.name = 'description';
+        document.head.appendChild(metaDesc);
+      }
+      metaDesc.content = plainLede;
+
+      // Per-service JSON-LD: Service + BreadcrumbList
+      const ld = document.createElement('script');
+      ld.type = 'application/ld+json';
+      ld.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Service",
+            "name": cfg.title,
+            "serviceType": cfg.categoryLabel,
+            "description": plainLede,
+            "provider": { "@type": "HVACBusiness", "name": "Quali House", "url": "https://qualihouse.fr" },
+            "areaServed": { "@type": "Country", "name": "France" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://qualihouse.fr/" },
+              { "@type": "ListItem", "position": 2, "name": "Prestations", "item": "https://qualihouse.fr/prestations/index.html" },
+              { "@type": "ListItem", "position": 3, "name": cfg.categoryLabel, "item": `https://qualihouse.fr/prestations/${cfg.categorySlug}/index.html` },
+              { "@type": "ListItem", "position": 4, "name": cfg.title }
+            ]
+          }
+        ]
+      });
+      document.head.appendChild(ld);
 
       const mainEl = document.getElementById('main');
       if (!mainEl) return;
