@@ -185,7 +185,6 @@
                 ${megaCol('Chaudière', 'M5 4h14v16H5z M9 9h6M9 13h6M9 17h3', [
                   ['À granulés','prestations/chaudiere/granules.html'],
                   ['Bois','prestations/chaudiere/bois.html'],
-                  ['Gaz','prestations/chaudiere/gaz.html'],
                   ['Fioul','prestations/chaudiere/fioul.html'],
                 ])}
                 ${megaCol('Eau chaude', 'M12 3c-3 5-6 8-6 12a6 6 0 0 0 12 0c0-4-3-7-6-12z', [
@@ -249,7 +248,6 @@
                 ${mobileCat('Chaudière', [
                   ['Granulés','prestations/chaudiere/granules.html'],
                   ['Bois','prestations/chaudiere/bois.html'],
-                  ['Gaz','prestations/chaudiere/gaz.html'],
                   ['Fioul','prestations/chaudiere/fioul.html'],
                 ])}
                 ${mobileCat('Eau chaude', [
@@ -1222,8 +1220,8 @@
       label: 'Chaudière',
       title: 'Chaudière',
       tagline: 'Quatre énergies, un seul interlocuteur.',
-      lede: 'Biomasse haut rendement (granulés, bois bûches), gaz à condensation, accompagnement à la sortie du fioul. Toutes les chaudières installées, mises en service et entretenues par nos chauffagistes certifiés.',
-      services: ['granules','bois','gaz','fioul'],
+      lede: 'Biomasse haut rendement — granulés et bois bûches — et accompagnement à la sortie du fioul. Toutes les chaudières installées, mises en service et entretenues par nos chauffagistes certifiés.',
+      services: ['granules','bois','fioul'],
     },
     'eau-chaude': {
       label: 'Eau chaude sanitaire',
