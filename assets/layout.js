@@ -69,9 +69,9 @@
           mono: ['"JetBrains Mono"','ui-monospace','monospace'],
         },
         colors: {
-          canvas:'#0F1115', surface:'#14171C', line:'#1E222A',
-          ink:'#F5F6F7', muted:'#8B9099',
-          sage:'#A8C0A6', 'sage-deep':'#7B9A7A', frost:'#C5CDD5',
+          canvas:'#F4F6EF', surface:'#FFFFFF', line:'#E4E6DC',
+          ink:'#16211A', muted:'#5E6B5C',
+          sage:'#2E9444', 'sage-deep':'#1E6E32', frost:'#26352A',
           'brand-green':'#2E9444', 'brand-navy':'#1B3A5C',
         },
         letterSpacing:{ micro:'-0.015em', tightest:'-0.045em' },
@@ -90,24 +90,21 @@
     // Global styles
     const style = document.createElement('style');
     style.textContent = `
-      :root { color-scheme: dark; }
+      :root { color-scheme: light; }
       html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-      body { background:#0F1115; color:#F5F6F7; font-family:'Plus Jakarta Sans', system-ui, sans-serif; }
+      body { background:#F4F6EF; color:#16211A; font-family:'Plus Jakarta Sans', system-ui, sans-serif; }
       /* Logo sizing — applied synchronously so the SVG never flashes huge before Tailwind loads */
       .qh-logo-nav    { width:44px; height:44px; flex-shrink:0; display:inline-block; }
       .qh-logo-footer { width:52px; height:52px; flex-shrink:0; display:inline-block; }
       .qh-logo-nav svg, .qh-logo-footer svg { width:100%; height:100%; display:block; }
-      .grain::before {
-        content:""; position:fixed; inset:0; pointer-events:none; z-index:50;
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-        opacity:.5; mix-blend-mode:overlay;
-      }
+      /* Soft luminous radial blooms — bright, joyful, energy-positive */
       .ambient-glow {
         position:absolute; inset:-10%; pointer-events:none; z-index:0;
         background:
-          radial-gradient(40% 35% at 78% 38%, rgba(168,192,166,0.10), transparent 60%),
-          radial-gradient(35% 30% at 18% 70%, rgba(168,192,166,0.06), transparent 60%);
-        filter:blur(10px); animation:drift 22s ease-in-out infinite alternate;
+          radial-gradient(45% 40% at 80% 30%, rgba(46,148,68,0.13), transparent 62%),
+          radial-gradient(40% 38% at 14% 72%, rgba(245,210,90,0.12), transparent 62%),
+          radial-gradient(50% 45% at 50% 8%, rgba(46,148,68,0.06), transparent 60%);
+        filter:blur(12px); animation:drift 22s ease-in-out infinite alternate;
       }
       @keyframes drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-2%,1.5%,0) scale(1.05)} }
       [data-reveal] { opacity:0; transform:translate3d(0,14px,0);
@@ -115,42 +112,44 @@
         will-change:transform,opacity; }
       [data-reveal].is-visible { opacity:1; transform:translate3d(0,0,0); }
       [data-reveal][style*="--i"] { transition-delay: calc(var(--i) * 90ms); }
+      /* Light frosted glass — clean white, soft green-tinted shadow */
       .cta-glass {
-        background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-        backdrop-filter:blur(14px) saturate(1.1);
-        -webkit-backdrop-filter:blur(14px) saturate(1.1);
-        border:1px solid rgba(255,255,255,0.10);
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.25), 0 1px 0 rgba(0,0,0,0.5), 0 14px 40px -16px rgba(168,192,166,0.28);
+        background: rgba(255,255,255,0.82);
+        backdrop-filter:blur(14px) saturate(1.5);
+        -webkit-backdrop-filter:blur(14px) saturate(1.5);
+        border:1px solid rgba(22,33,26,0.08);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 1px 2px rgba(22,33,26,0.04), 0 14px 36px -16px rgba(46,148,68,0.30);
         transition: transform 260ms cubic-bezier(0.16,1,0.3,1), box-shadow 260ms ease;
       }
       .cta-glass:hover {
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -1px 0 rgba(0,0,0,0.25), 0 1px 0 rgba(0,0,0,0.5), 0 18px 56px -14px rgba(168,192,166,0.42);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 4px rgba(22,33,26,0.05), 0 20px 52px -14px rgba(46,148,68,0.42);
       }
       .cta-glass:active { transform: translateY(1px) scale(0.992); }
       .marquee-track { animation: marquee 42s linear infinite; }
       @keyframes marquee { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
-      .field { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08); transition: border-color 200ms ease, background 200ms ease; }
-      .field:focus { outline: none; border-color: rgba(168,192,166,0.55); background: rgba(168,192,166,0.04); box-shadow: 0 0 0 4px rgba(168,192,166,0.08); }
-      .photo-treat { filter: saturate(0.85) contrast(1.04) brightness(0.92); }
+      .field { background: #FFFFFF; border: 1px solid rgba(22,33,26,0.12); transition: border-color 200ms ease, background 200ms ease, box-shadow 200ms ease; }
+      .field:focus { outline: none; border-color: rgba(46,148,68,0.6); background: #FFFFFF; box-shadow: 0 0 0 4px rgba(46,148,68,0.12); }
+      .field::placeholder { color: rgba(94,107,92,0.6); }
+      .photo-treat { filter: saturate(1.06) contrast(1.02) brightness(1.03); }
       .has-mega { position: relative; }
       .has-mega .mega {
         position: absolute; top: calc(100% + 14px); left: 50%; transform: translate(-50%, 6px);
         opacity: 0; visibility: hidden;
         transition: opacity 220ms ease, transform 260ms cubic-bezier(0.16,1,0.3,1);
         width: min(980px, 92vw); z-index: 60;
-        /* Opaque dark surface — not glass — so menu reads cleanly over any background */
-        background:#16191F;
-        border:1px solid rgba(255,255,255,0.08);
+        /* Solid white panel so the menu reads cleanly over any background */
+        background:#FFFFFF;
+        border:1px solid rgba(22,33,26,0.08);
         border-radius:20px;
-        box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,0,0,0.3);
+        box-shadow: 0 30px 70px -22px rgba(22,33,26,0.22), 0 2px 8px rgba(22,33,26,0.05);
       }
       .has-mega:hover .mega, .has-mega:focus-within .mega { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
       .has-mega::after { content:""; position:absolute; left:0; right:0; top:100%; height:22px; }
       #qh-mobile-menu { transform: translateY(-12px); opacity: 0; pointer-events: none;
         transition: transform 280ms cubic-bezier(0.16,1,0.3,1), opacity 220ms ease; }
       #qh-mobile-menu.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
-      .nav-link[aria-current="page"] { color:#A8C0A6; }
-      ::selection { background: rgba(168,192,166,0.35); color:#fff; }
+      .nav-link[aria-current="page"] { color:#1E6E32; }
+      ::selection { background: rgba(46,148,68,0.22); color:#16211A; }
     `;
     document.head.appendChild(style);
   }
@@ -204,7 +203,7 @@
                   ['VMC double flux','prestations/vmc/double-flux.html'],
                 ])}
               </div>
-              <div class="mt-6 pt-5 border-t border-white/[0.06] flex items-center justify-between">
+              <div class="mt-6 pt-5 border-t border-black/[0.08] flex items-center justify-between">
                 <p class="text-[12.5px] text-muted">Toutes nos prestations sont éligibles aux aides de l'État.</p>
                 <a href="${R}contact.html" class="text-[12.5px] text-sage hover:text-ink transition-colors inline-flex items-center gap-1.5">
                   Calculer mes aides
@@ -220,11 +219,11 @@
         </ul>
 
         <div class="flex items-center gap-2">
-          <a href="${R}contact.html#eligibilite" class="hidden md:inline-flex text-[13px] tracking-micro items-center gap-2 px-3.5 py-1.5 rounded-lg border border-white/10 hover:border-sage/40 hover:text-sage transition-colors">
+          <a href="${R}contact.html#eligibilite" class="hidden md:inline-flex text-[13px] tracking-micro items-center gap-2 px-3.5 py-1.5 rounded-lg border border-black/10 hover:border-sage/40 hover:text-sage transition-colors">
             <span class="w-1.5 h-1.5 rounded-full bg-sage animate-pulse"></span>
             Calculer mes aides
           </a>
-          <button id="qh-menu-toggle" class="lg:hidden grid place-items-center w-10 h-10 rounded-lg border border-white/10" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="qh-mobile-menu">
+          <button id="qh-menu-toggle" class="lg:hidden grid place-items-center w-10 h-10 rounded-lg border border-black/10" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="qh-mobile-menu">
             <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6"><path id="qh-icon-bars" d="M4 7h16M4 12h16M4 17h16"/><path id="qh-icon-x" class="hidden" d="M6 6l12 12M18 6L6 18"/></svg>
           </button>
         </div>
@@ -239,7 +238,7 @@
                 <span class="text-muted group-open:text-ink">Nos prestations</span>
                 <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg>
               </summary>
-              <div class="mt-2 pl-3 border-l border-white/[0.06] space-y-3 text-[13.5px]">
+              <div class="mt-2 pl-3 border-l border-black/[0.08] space-y-3 text-[13.5px]">
                 ${mobileCat('Pompe à chaleur', [
                   ['PAC air-eau','prestations/pompe-a-chaleur/air-eau.html'],
                   ['PAC air-air','prestations/pompe-a-chaleur/air-air.html'],
@@ -352,7 +351,7 @@
         </ul>
       </div>
     </div>
-    <div class="border-t border-white/[0.05]">
+    <div class="border-t border-black/[0.055]">
       <div class="mx-auto max-w-[1400px] px-6 md:px-10 py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-[12px] text-muted">
         <div>© 2026 Quali House &middot; Tous droits réservés</div>
         <div class="flex items-center gap-5">
@@ -367,7 +366,7 @@
   /* ─── Re-usable CTA strip ─── */
   function ctaStrip() {
     return `
-    <section class="relative py-20 md:py-24 border-t border-white/[0.05]">
+    <section class="relative py-20 md:py-24 border-t border-black/[0.055]">
       <div class="mx-auto max-w-[1100px] px-6 md:px-10">
         <div class="rounded-3xl border border-sage/20 bg-gradient-to-br from-sage/[0.06] to-transparent p-8 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8" data-reveal>
           <div>
@@ -453,7 +452,7 @@
       // Move header to top (after skip link)
       document.body.insertBefore(header, document.body.children[1]);
       const footer = document.createElement('footer');
-      footer.className = 'relative border-t border-white/[0.05]';
+      footer.className = 'relative border-t border-black/[0.055]';
       footer.innerHTML = footerHTML();
       document.body.appendChild(footer);
       document.body.classList.add('grain', 'antialiased');
@@ -470,7 +469,7 @@
         <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-sage/70"></span><span class="text-frost">MaPrimeRénov'</span> <span>— mandataire</span></li>
         <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-sage/70"></span><span class="text-frost">France Rénov'</span> <span>— conseiller agréé</span></li>`;
       return `
-      <section class="relative border-y border-white/[0.05] py-7 overflow-hidden" data-reveal>
+      <section class="relative border-y border-black/[0.055] py-7 overflow-hidden" data-reveal>
         <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-canvas to-transparent z-10 pointer-events-none"></div>
         <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-canvas to-transparent z-10 pointer-events-none"></div>
         <div class="flex marquee-track w-max">
@@ -562,7 +561,7 @@
               </div>
             </div>
             <div class="lg:col-span-7 relative" data-reveal style="--i:2">
-              <div class="relative aspect-[4/5] lg:aspect-[4/5] rounded-[28px] overflow-hidden border border-white/[0.06]">
+              <div class="relative aspect-[4/5] lg:aspect-[4/5] rounded-[28px] overflow-hidden border border-black/[0.08]">
                 <img src="${R}${cfg.image}" alt="${cfg.imageAlt}" class="absolute inset-0 w-full h-full object-cover photo-treat" loading="eager" />
                 <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/10 to-transparent"></div>
                 <div class="absolute inset-0 bg-gradient-to-r from-canvas/40 via-transparent to-transparent"></div>
@@ -581,7 +580,7 @@
         </section>
 
         <!-- Comment ça fonctionne -->
-        <section class="relative py-24 md:py-28 border-t border-white/[0.05]">
+        <section class="relative py-24 md:py-28 border-t border-black/[0.055]">
           <div class="mx-auto max-w-[1400px] px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
             <div class="lg:col-span-4" data-reveal>
               <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3"><span class="font-mono">01</span><span class="w-6 h-px bg-sage/60"></span>Comment ça fonctionne</div>
@@ -602,7 +601,7 @@
         </section>
 
         <!-- Avantages -->
-        <section class="relative py-24 md:py-28 border-t border-white/[0.05]">
+        <section class="relative py-24 md:py-28 border-t border-black/[0.055]">
           <div class="mx-auto max-w-[1400px] px-6 md:px-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-14">
               <div class="lg:col-span-4" data-reveal><div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3"><span class="font-mono">02</span><span class="w-6 h-px bg-sage/60"></span>Points forts</div></div>
@@ -623,14 +622,14 @@
 
         <!-- Specs -->
         ${cfg.specsTable ? `
-        <section class="relative py-24 md:py-28 border-t border-white/[0.05]">
+        <section class="relative py-24 md:py-28 border-t border-black/[0.055]">
           <div class="mx-auto max-w-[1400px] px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
             <div class="lg:col-span-4" data-reveal>
               <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3"><span class="font-mono">03</span><span class="w-6 h-px bg-sage/60"></span>Caractéristiques</div>
               <h2 class="mt-5 font-light text-[30px] md:text-[40px] leading-[1.04] tracking-tightest">${cfg.specsTitle || 'Données techniques.'}</h2>
             </div>
             <div class="lg:col-span-8" data-reveal style="--i:1">
-              <dl class="divide-y divide-white/[0.06] border-y border-white/[0.06]">
+              <dl class="divide-y divide-black/[0.08] border-y border-black/[0.08]">
                 ${cfg.specsTable.map(s => `
                   <div class="grid grid-cols-2 gap-8 py-5">
                     <dt class="text-[14.5px] text-muted">${s.label}</dt>
@@ -643,7 +642,7 @@
         </section>` : ''}
 
         <!-- Aides applicables -->
-        <section class="relative py-24 md:py-28 border-t border-white/[0.05]">
+        <section class="relative py-24 md:py-28 border-t border-black/[0.055]">
           <div class="mx-auto max-w-[1400px] px-6 md:px-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
               <div class="lg:col-span-4" data-reveal>
@@ -659,7 +658,7 @@
                 <a href="${R}aides.html" class="bg-canvas p-6 md:p-7 hover:bg-surface/60 transition-colors group" data-reveal style="--i:${i}">
                   <div class="flex items-center justify-between">
                     <span class="text-[11px] uppercase tracking-[0.14em] text-sage/80 font-mono">${String(i+1).padStart(2,'0')}</span>
-                    ${a.eligible ? '<span class="text-[10.5px] uppercase tracking-[0.12em] px-2 py-0.5 rounded-full bg-sage/15 text-sage border border-sage/25">Éligible</span>' : '<span class="text-[10.5px] uppercase tracking-[0.12em] px-2 py-0.5 rounded-full bg-white/[0.04] text-muted border border-white/[0.06]">Non éligible</span>'}
+                    ${a.eligible ? '<span class="text-[10.5px] uppercase tracking-[0.12em] px-2 py-0.5 rounded-full bg-sage/15 text-sage border border-sage/25">Éligible</span>' : '<span class="text-[10.5px] uppercase tracking-[0.12em] px-2 py-0.5 rounded-full bg-black/[0.04] text-muted border border-black/[0.08]">Non éligible</span>'}
                   </div>
                   <h3 class="mt-6 text-[17px] font-medium tracking-micro group-hover:text-sage transition-colors">${a.name}</h3>
                   <p class="mt-2 text-[13px] text-muted leading-relaxed">${a.note}</p>
@@ -1256,7 +1255,7 @@
             <img src="${R}${s.image}" alt="${s.imageAlt}" loading="lazy"
                  class="absolute inset-0 w-full h-full object-cover photo-treat transition-transform duration-[600ms] group-hover:scale-[1.04]" />
             <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent"></div>
-            <div class="absolute top-4 left-4 font-mono text-[11px] uppercase tracking-[0.16em] text-sage/90 bg-canvas/70 backdrop-blur px-2.5 py-1 rounded-md border border-white/[0.06]">${String(i+1).padStart(2,'0')}</div>
+            <div class="absolute top-4 left-4 font-mono text-[11px] uppercase tracking-[0.16em] text-sage/90 bg-canvas/70 backdrop-blur px-2.5 py-1 rounded-md border border-black/[0.08]">${String(i+1).padStart(2,'0')}</div>
           </div>
           <div class="flex-1 p-7 md:p-8 flex flex-col">
             <h3 class="text-[22px] md:text-[26px] font-light leading-[1.1] tracking-tightest group-hover:text-sage transition-colors">${s.title}</h3>
@@ -1264,7 +1263,7 @@
             <div class="mt-5 flex items-center gap-3 text-[12px] flex-wrap">
               ${s.specs.slice(0,2).map(sp => `<span class="text-muted"><span class="font-mono text-frost">${sp.value}</span> ${sp.label}</span>`).join('<span class="text-muted/40">·</span>')}
             </div>
-            <span class="mt-auto inline-flex items-center gap-2 text-[13.5px] text-sage font-medium pt-7 border-t border-white/[0.06] mt-7">
+            <span class="mt-auto inline-flex items-center gap-2 text-[13.5px] text-sage font-medium pt-7 border-t border-black/[0.08] mt-7">
               Découvrir
               <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </span>
@@ -1333,7 +1332,7 @@
             <div class="mt-5 flex items-center gap-3 text-[12px] flex-wrap">
               ${s.specs.slice(0,2).map(sp => `<span class="text-muted"><span class="font-mono text-frost">${sp.value}</span> ${sp.label}</span>`).join('<span class="text-muted/40">·</span>')}
             </div>
-            <span class="mt-auto inline-flex items-center gap-2 text-[13px] text-sage font-medium pt-6 mt-6 border-t border-white/[0.06]">
+            <span class="mt-auto inline-flex items-center gap-2 text-[13px] text-sage font-medium pt-6 mt-6 border-t border-black/[0.08]">
               Découvrir
               <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </span>
@@ -1345,7 +1344,7 @@
       const cat = CATEGORIES[slug];
       const cols = cat.services.length >= 4 ? 'lg:grid-cols-4' : (cat.services.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2');
       return `
-        <section class="relative py-16 md:py-20 ${idx>0 ? 'border-t border-white/[0.05]' : ''}">
+        <section class="relative py-16 md:py-20 ${idx>0 ? 'border-t border-black/[0.055]' : ''}">
           <div class="mx-auto max-w-[1400px] px-6 md:px-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 mb-9 md:mb-11 items-end">
               <div class="lg:col-span-7" data-reveal>
