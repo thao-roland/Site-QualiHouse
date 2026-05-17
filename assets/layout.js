@@ -370,7 +370,7 @@
       <div class="mx-auto max-w-[1100px] px-6 md:px-10">
         <div class="rounded-3xl border border-sage/20 bg-gradient-to-br from-sage/[0.16] to-sage/[0.04] p-8 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8" data-reveal>
           <div>
-            <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3">
+            <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage flex items-center gap-3">
               <span class="w-6 h-px bg-sage/60"></span>Test d'éligibilité
             </div>
             <h3 class="mt-4 text-[28px] md:text-[34px] font-light leading-[1.1] tracking-tightest max-w-[20ch]">
@@ -540,7 +540,7 @@
                 <span class="text-muted/50">/</span>
                 <span class="text-frost">${cfg.title}</span>
               </nav>
-              <div class="flex items-center gap-3 text-[11.5px] uppercase tracking-[0.18em] text-sage/80" data-reveal style="--i:1">
+              <div class="flex items-center gap-3 text-[11.5px] uppercase tracking-[0.18em] text-sage" data-reveal style="--i:1">
                 <span class="w-6 h-px bg-sage/60"></span>${cfg.categoryLabel}
               </div>
               <h1 class="mt-5 font-light text-[42px] sm:text-[54px] lg:text-[62px] leading-[0.98] tracking-tightest" data-reveal style="--i:2">
@@ -583,13 +583,13 @@
         <section class="relative py-24 md:py-28 border-t border-black/[0.055]">
           <div class="mx-auto max-w-[1400px] px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
             <div class="lg:col-span-4" data-reveal>
-              <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3"><span class="font-mono">01</span><span class="w-6 h-px bg-sage/60"></span>Comment ça fonctionne</div>
+              <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage flex items-center gap-3"><span class="font-mono">01</span><span class="w-6 h-px bg-sage/60"></span>Comment ça fonctionne</div>
               <h2 class="mt-5 font-light text-[30px] md:text-[40px] leading-[1.04] tracking-tightest max-w-[16ch]">${cfg.principleTitle}</h2>
             </div>
             <div class="lg:col-span-8 space-y-7" data-reveal style="--i:1">
               ${cfg.principle.map((p,i) => `
                 <div class="grid grid-cols-[auto_1fr] gap-5">
-                  <div class="font-mono text-[12px] text-sage/80 pt-1">0${i+1}</div>
+                  <div class="font-mono text-[12px] text-sage pt-1">0${i+1}</div>
                   <div>
                     <h3 class="text-[18px] font-medium tracking-micro">${p.title}</h3>
                     <p class="mt-2 text-[15px] text-muted leading-relaxed max-w-[58ch]">${p.body}</p>
@@ -604,7 +604,7 @@
         <section class="relative py-24 md:py-28 border-t border-black/[0.055]">
           <div class="mx-auto max-w-[1400px] px-6 md:px-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-14">
-              <div class="lg:col-span-4" data-reveal><div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3"><span class="font-mono">02</span><span class="w-6 h-px bg-sage/60"></span>Points forts</div></div>
+              <div class="lg:col-span-4" data-reveal><div class="text-[11.5px] uppercase tracking-[0.18em] text-sage flex items-center gap-3"><span class="font-mono">02</span><span class="w-6 h-px bg-sage/60"></span>Points forts</div></div>
               <div class="lg:col-span-8" data-reveal style="--i:1">
                 <h2 class="font-light text-[30px] md:text-[40px] leading-[1.04] tracking-tightest max-w-[22ch]">${cfg.benefitsTitle}</h2>
               </div>
@@ -625,7 +625,7 @@
         <section class="relative py-24 md:py-28 border-t border-black/[0.055]">
           <div class="mx-auto max-w-[1400px] px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
             <div class="lg:col-span-4" data-reveal>
-              <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3"><span class="font-mono">03</span><span class="w-6 h-px bg-sage/60"></span>Caractéristiques</div>
+              <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage flex items-center gap-3"><span class="font-mono">03</span><span class="w-6 h-px bg-sage/60"></span>Caractéristiques</div>
               <h2 class="mt-5 font-light text-[30px] md:text-[40px] leading-[1.04] tracking-tightest">${cfg.specsTitle || 'Données techniques.'}</h2>
             </div>
             <div class="lg:col-span-8" data-reveal style="--i:1">
@@ -646,7 +646,7 @@
           <div class="mx-auto max-w-[1400px] px-6 md:px-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
               <div class="lg:col-span-4" data-reveal>
-                <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3"><span class="font-mono">04</span><span class="w-6 h-px bg-sage/60"></span>Aides applicables</div>
+                <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage flex items-center gap-3"><span class="font-mono">04</span><span class="w-6 h-px bg-sage/60"></span>Aides applicables</div>
               </div>
               <div class="lg:col-span-8" data-reveal style="--i:1">
                 <h2 class="font-light text-[30px] md:text-[40px] leading-[1.04] tracking-tightest max-w-[22ch]">${cfg.aidesTitle || 'Vos aides cumulables.'}</h2>
@@ -657,7 +657,7 @@
               ${cfg.aides.map((a,i) => `
                 <a href="${R}aides.html" class="bg-canvas p-6 md:p-7 hover:bg-surface/60 transition-colors group" data-reveal style="--i:${i}">
                   <div class="flex items-center justify-between">
-                    <span class="text-[11px] uppercase tracking-[0.14em] text-sage/80 font-mono">${String(i+1).padStart(2,'0')}</span>
+                    <span class="text-[11px] uppercase tracking-[0.14em] text-sage font-mono">${String(i+1).padStart(2,'0')}</span>
                     ${a.eligible ? '<span class="text-[10.5px] uppercase tracking-[0.12em] px-2 py-0.5 rounded-full bg-sage/15 text-sage border border-sage/25">Éligible</span>' : '<span class="text-[10.5px] uppercase tracking-[0.12em] px-2 py-0.5 rounded-full bg-black/[0.04] text-muted border border-black/[0.08]">Non éligible</span>'}
                   </div>
                   <h3 class="mt-6 text-[17px] font-medium tracking-micro group-hover:text-sage transition-colors">${a.name}</h3>
@@ -1284,7 +1284,7 @@
           </nav>
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
             <div class="lg:col-span-5">
-              <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3" data-reveal>
+              <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage flex items-center gap-3" data-reveal>
                 <span class="w-6 h-px bg-sage/60"></span>${cat.label}
               </div>
               <h1 class="mt-5 font-light text-[44px] sm:text-[54px] lg:text-[62px] leading-[0.98] tracking-tightest" data-reveal style="--i:1">${cat.tagline}</h1>
@@ -1348,7 +1348,7 @@
           <div class="mx-auto max-w-[1400px] px-6 md:px-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 mb-9 md:mb-11 items-end">
               <div class="lg:col-span-7" data-reveal>
-                <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3">
+                <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage flex items-center gap-3">
                   <span class="font-mono">${String(idx+1).padStart(2,'0')}</span>
                   <span class="w-6 h-px bg-sage/60"></span>${cat.label}
                 </div>
@@ -1379,7 +1379,7 @@
           </nav>
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
             <div class="lg:col-span-6">
-              <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3" data-reveal>
+              <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage flex items-center gap-3" data-reveal>
                 <span class="w-6 h-px bg-sage/60"></span>Nos prestations
               </div>
               <h1 class="mt-5 font-light text-[44px] sm:text-[54px] lg:text-[62px] leading-[0.98] tracking-tightest" data-reveal style="--i:1">
