@@ -160,10 +160,10 @@
     const aria = (key) => active === key ? 'aria-current="page"' : '';
     return `
     <div class="mx-auto max-w-[1400px] px-4 md:px-10 mt-4">
-      <nav class="cta-glass rounded-2xl px-3 md:px-5 h-16 flex items-center justify-between" aria-label="Navigation principale">
+      <nav class="cta-glass rounded-2xl px-3 md:px-5 h-20 flex items-center justify-between" aria-label="Navigation principale">
 
         <a href="${R}index.html" class="flex items-center gap-3 shrink-0" aria-label="Accueil Quali House" style="line-height:0;">
-          ${logoSvg(44)}
+          ${logoSvg(60)}
         </a>
 
         <ul class="hidden lg:flex items-center gap-1 text-[13.5px]">
