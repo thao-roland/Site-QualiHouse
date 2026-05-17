@@ -368,7 +368,7 @@
     return `
     <section class="relative py-20 md:py-24 border-t border-black/[0.055]">
       <div class="mx-auto max-w-[1100px] px-6 md:px-10">
-        <div class="rounded-3xl border border-sage/20 bg-gradient-to-br from-sage/[0.06] to-transparent p-8 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8" data-reveal>
+        <div class="rounded-3xl border border-sage/20 bg-gradient-to-br from-sage/[0.16] to-sage/[0.04] p-8 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8" data-reveal>
           <div>
             <div class="text-[11.5px] uppercase tracking-[0.18em] text-sage/80 flex items-center gap-3">
               <span class="w-6 h-px bg-sage/60"></span>Test d'éligibilité
